@@ -1,0 +1,217 @@
+@charset "utf-8";
+/* CSS Document */
+
+.flow-text-strong{
+  font-weight: 500;
+}
+
+@media only screen and (min-width: 360px) {
+  .flow-text-strong {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (min-width: 390px) {
+  .flow-text-strong {
+    font-size: 1.224rem;
+  }
+}
+
+@media only screen and (min-width: 420px) {
+  .flow-text-strong {
+    font-size: 1.248rem;
+  }
+}
+
+@media only screen and (min-width: 450px) {
+  .flow-text-strong {
+    font-size: 1.272rem;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .flow-text-strong {
+    font-size: 1.296rem;
+  }
+}
+
+@media only screen and (min-width: 510px) {
+  .flow-text-strong {
+    font-size: 1.32rem;
+  }
+}
+
+@media only screen and (min-width: 540px) {
+  .flow-text-strong {
+    font-size: 1.344rem;
+  }
+}
+
+@media only screen and (min-width: 570px) {
+  .flow-text-strong {
+    font-size: 1.368rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .flow-text-strong {
+    font-size: 1.392rem;
+  }
+}
+
+@media only screen and (min-width: 630px) {
+  .flow-text-strong {
+    font-size: 1.416rem;
+  }
+}
+
+@media only screen and (min-width: 660px) {
+  .flow-text-strong {
+    font-size: 1.44rem;
+  }
+}
+
+@media only screen and (min-width: 690px) {
+  .flow-text-strong {
+    font-size: 1.464rem;
+  }
+}
+
+@media only screen and (min-width: 720px) {
+  .flow-text-strong {
+    font-size: 1.488rem;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  .flow-text-strong {
+    font-size: 1.512rem;
+  }
+}
+
+@media only screen and (min-width: 780px) {
+  .flow-text-strong {
+    font-size: 1.536rem;
+  }
+}
+
+@media only screen and (min-width: 810px) {
+  .flow-text-strong {
+    font-size: 1.56rem;
+  }
+}
+
+@media only screen and (min-width: 840px) {
+  .flow-text-strong {
+    font-size: 1.584rem;
+  }
+}
+
+@media only screen and (min-width: 870px) {
+  .flow-text-strong {
+    font-size: 1.608rem;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .flow-text-strong {
+    font-size: 1.632rem;
+  }
+}
+
+@media only screen and (min-width: 930px) {
+  .flow-text-strong {
+    font-size: 1.656rem;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .flow-text-strong {
+    font-size: 1.68rem;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .flow-text-strong {
+    font-size: 1.2rem;
+  }
+}
+
+.homepage_title{
+	
+	margin-top: 30%;
+}
+
+.padding_top_n{
+	padding-top: 0px;
+}
+
+.full_b{
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+	top: 100px;
+	 
+}
+
+.margin_t_auto{
+	margin-top: auto;
+}
+
+.background_c_n{
+	background-color:rgba(0,0,0,0.00);
+	
+}
+.padding_n{
+	padding: 0px;
+}
+.padding_b_n{
+	margin-bottom: -8px;
+}
+.padding_b_s{
+	padding-bottom: 20px;
+}
+.padding_top_home{
+	padding-top: 100px;
+}
+.medium_text{
+  font-size: 130%;
+}
+.box_shadow_n{
+	box-shadow:none; 
+}
+.display_block{
+	display: block;
+}
+.display_n {
+	display: none;
+}
+.padding{
+	padding: 10px;
+}
+
+.mycard_title{
+	margin-bottom: 0px;
+	padding: 0px;
+
+}
+
+.my_t_b{
+	background-color: #000000;
+	background-color: rgba(0,0,0,0.45);
+	text-shadow: 0px 0px 10px #000000;
+}
+.text_shadow{
+	text-shadow: 0px 0px 10px #000000;
+}
+.my-blue{
+	background-color:rgba(0,18,224,1.00);
+}
+.black_fade{
+		background-color: #000000;
+	background-color: rgba(0,0,0,0.45);
+}
+
+.neg_top_margin{
+	margin-top: -7px;
+}
