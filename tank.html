@@ -18,7 +18,7 @@
 		margin-bottom: 0;
 	}
 	.veryback{
-			display: block;
+		display: block;
 		position: absolute;
 		width: 100%;
 	
@@ -26,7 +26,7 @@
 		/*background-color: lightpink;	*/
 	}
 	.middleground{
-			display: block;
+		display: block;
 		position: absolute;
 		width: 100%;
 		
@@ -36,7 +36,7 @@
 	}
 	
 	.foreground{
-			display: block;
+		display: block;
 		position: absolute;
 		
 		width: 100%;
@@ -46,13 +46,13 @@
 		opacity: 0.3;*/
 	}
 	.gravel{
-			display: block;
+		display: block;
 		position: absolute;
 		width: 100%;
 		z-index: 1;
 	}
 	.back_wall{
-					display: block;
+		display: block;
 		position: absolute;
 		width: 100%;
 		z-index: 0;
@@ -74,46 +74,46 @@
 	
 	.right_forty_up{
 		-ms-transform: rotate(-10deg); /* IE 9 */
-    -ms-transform-origin: center; /* IE 9 */
-    -webkit-transform: rotate(-10deg); /* Chrome, Safari, Opera */
-    -webkit-transform-origin: center; /* Chrome, Safari, Opera */
-    transform: rotate(-10deg);
-    transform-origin: center;
+		-ms-transform-origin: center; /* IE 9 */
+		-webkit-transform: rotate(-10deg); /* Chrome, Safari, Opera */
+		-webkit-transform-origin: center; /* Chrome, Safari, Opera */
+		transform: rotate(-10deg);
+		transform-origin: center;
 		-o-transition: all .4s ease-in-out;
-    -ms-transition: all .4s ease-in-out;
-    -moz-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
-}
+		-ms-transition: all .4s ease-in-out;
+		-moz-transition: all .4s ease-in-out;
+		-webkit-transition: all .4s ease-in-out;
+		transition: all .4s ease-in-out;
+	}
 	
 	.right_forty_down{
 		-ms-transform: rotate(10deg); /* IE 9 */
-    -ms-transform-origin: center; /* IE 9 */
-    -webkit-transform: rotate(10deg); /* Chrome, Safari, Opera */
-    -webkit-transform-origin: center; /* Chrome, Safari, Opera */
-    transform: rotate(10deg);
-    transform-origin: center;
+		-ms-transform-origin: center; /* IE 9 */
+		-webkit-transform: rotate(10deg); /* Chrome, Safari, Opera */
+		-webkit-transform-origin: center; /* Chrome, Safari, Opera */
+		transform: rotate(10deg);
+		transform-origin: center;
 		-o-transition: all .4s ease-in-out;
-    -ms-transition: all .4s ease-in-out;
-    -moz-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
-}
+		-ms-transition: all .4s ease-in-out;
+		-moz-transition: all .4s ease-in-out;
+		-webkit-transition: all .4s ease-in-out;
+		transition: all .4s ease-in-out;
+	}
 
 	.left_forty_up{
-		-ms-transform: rotate(10deg); /* IE 9 */
+	-ms-transform: rotate(10deg); /* IE 9 */
     -ms-transform-origin: center; /* IE 9 */
     -webkit-transform: rotate(10deg); /* Chrome, Safari, Opera */
     -webkit-transform-origin: center; /* Chrome, Safari, Opera */
     transform: rotate(10deg);
     transform-origin: center;
-		-o-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
     -ms-transition: all .4s ease-in-out;
     -moz-transition: all .4s ease-in-out;
     -webkit-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
-		 -moz-transform: scaleX(-1);
-        -o-transform: scaleX(-1);
+		-moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
         -webkit-transform: scaleX(-1);
         transform: scaleX(-1);
         filter: FlipH;
@@ -153,7 +153,7 @@
 	}
 	
 	.full-width{
-		display: block
+		display: block;
 		width: 100%;
 	}
 	
@@ -583,7 +583,7 @@ function fishSwim(){
 		//<img class="responsive-img" src="img/wisteria.svg" onerror="this.src='img/wisteria.png'; this.onerror=null;" width="2000" height="550" alt=""/>
 		var foreground_v = $('select[name="gravel"]').val();
 		var foregimg_1 = '<img class="responsive-img" src="img/aquaruim-things.png" width="2000" height="550" alt="gray gravel"/>';
-		var foregimg_2 = '<img class="responsive-img" src="img/gravel_sand" width="2000" height="550" alt="sandy gravel"/>';
+		var foregimg_2 = '<img class="responsive-img" src="img/gravel_sand.png" width="2000" height="550" alt="sandy gravel"/>';
 		
 		if ($('.gravel:has(img)').length > 0){
 				if (foreground_v== 1){
