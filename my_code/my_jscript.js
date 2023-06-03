@@ -92,66 +92,66 @@ function makeNewPosition() {
 		// if it is going down AND right
 		if (test_position[0] < test_position[2] && test_position[1] < test_position[3]) {
 
-			if ($('.fish > img:first').hasClass('display_n')) {
-				$('.fish > img:first').removeClass('display_n');
-				$('.fish > img:last').addClass('display_n');
+			if (document.querySelectorAll('.fish > img:first').classList.contains('display_n')) {
+				document.querySelectorAll('.fish > img:first').classList.remove('display_n');
+				document.querySelectorAll('.fish > img:last').classList.add('display_n');
 			}
 			else {
 				//do nothing
 			}
 			//turn the fish down
-			$('.testing').removeClass('right_forty_up');
-			$('.testing').addClass('right_forty_down');
+			document.querySelectorAll('.testing').classList.remove('right_forty_up');
+			document.querySelectorAll('.testing').classList.add('right_forty_down');
 		}
 
 		//if it is going up AND right
 		else if (test_position[0] > test_position[2] && test_position[1] < test_position[3]) {
 			// when the right facing fish is off, turn it on
-			if ($('.fish > img:first').hasClass('display_n')) {
-				$('.fish > img:first').removeClass('display_n');
-				$('.fish > img:last').addClass('display_n');
+			if (document.querySelectorAll('.fish > img:first').classList.contains('display_n')) {
+				document.querySelectorAll('.fish > img:first').classList.remove('display_n');
+				document.querySelectorAll('.fish > img:last').classList.add('display_n');
 			}
 			else {
 				//do nothing
 			}
 
 			// turn the fish up	
-			$('.testing').removeClass('right_forty_down');
-			$('.testing').addClass('right_forty_up');
+			document.querySelectorAll('.testing').classList.remove('right_forty_down');
+			document.querySelectorAll('.testing').classList.add('right_forty_up');
 
 		}
 
 		//if it is going up AND left
 		else if (test_position[0] > test_position[2] && test_position[1] > test_position[3]) {
 			// when the left facing fish is off, turn it on
-			if ($('.fish > img:last').hasClass('display_n')) {
-				$('.fish > img:last').removeClass('display_n');
-				$('.fish > img:first').addClass('display_n');
+			if (document.querySelectorAll('.fish > img:last').classList.contains('display_n')) {
+				document.querySelectorAll('.fish > img:last').classList.remove('display_n');
+				document.querySelectorAll('.fish > img:first').classList.add('display_n');
 			}
 			else {
 				//do nothing
 			}
 
 			// turn the fish down	
-			$('.testing').removeClass('right_forty_up');
-			$('.testing').addClass('right_forty_down');
+			document.querySelector('.testing').classList.remove('right_forty_up');
+			document.querySelector('.testing').classList.add('right_forty_down');
 
 		}
 
 		//if it is going down AND left
 		else if (test_position[0] < test_position[2] && test_position[1] > test_position[3]) {
 			// when the left facing fish is off, turn it on
-			if ($('.fish > img:last').hasClass('display_n')) {
-				$('.fish > img:last').removeClass('display_n');
-				$('.fish > img:first').addClass('display_n');
+			if (document.querySelectorAll('.fish > img:last').classList.contains('display_n')) {
+				document.querySelectorAll('.fish > img:last').classList.remove('display_n');
+				document.querySelectorAll('.fish > img:first').classList.add('display_n');
 			}
 			else {
 				//do nothing
 			}
 
 			// turn the fish up
-			$('.testing').removeClass('right_forty_down');
-			$('.testing').addClass('right_forty_up');
+			document.querySelector('.testing').classList.remove('right_forty_down');
+			document.querySelector('.testing').classList.add('right_forty_up');
 
 		}
 
@@ -161,7 +161,7 @@ function makeNewPosition() {
 		}
 
 
-		//$('.fish > img:first').replaceWith('<img src="https://www.placecage.com/g/102/102" alt="" height="100" width="100">');
+		//document.querySelector('.fish > img:first').replaceWith('<img src="https://www.placecage.com/g/102/102" alt="" height="100" width="100">');
 
 	}
 
@@ -173,18 +173,18 @@ function makeNewPosition() {
 
 	// Adjusts the Z-INDEX on FISH
 	if (z_counter == 1) {
-		if ($('.fish').hasClass('z_4')) {
-			$('.fish').removeClass('z_4');
-			$('.fish').addClass('z_2');
+		if (document.querySelector('.fish').classList.contains('z_4')) {
+			document.querySelector('.fish').classList.remove('z_4');
+			document.querySelector('.fish').classList.add('z_2');
 		}
 		else {
 			//do nothing
 		}
 	}
 	else {
-		if ($('.fish').hasClass('z_2')) {
-			$('.fish').removeClass('z_2');
-			$('.fish').addClass('z_4');
+		if (document.querySelector('.fish').classList.contains('z_2')) {
+			document.querySelector('.fish').classList.remove('z_2');
+			document.querySelector('.fish').classList.add('z_4');
 		}
 		else {
 			//do nothing
