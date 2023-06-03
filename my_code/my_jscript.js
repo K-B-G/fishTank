@@ -92,41 +92,41 @@ function makeNewPosition() {
 		// if it is going down AND right
 		if (test_position[0] < test_position[2] && test_position[1] < test_position[3]) {
 
-			if (document.querySelectorAll('.fish > img:first').classList.contains('display_n')) {
-				document.querySelectorAll('.fish > img:first').classList.remove('display_n');
-				document.querySelectorAll('.fish > img:last').classList.add('display_n');
+			if (document.querySelector('.fish > img').classList.contains('display_n')) {
+				document.querySelector('.fish > img').classList.remove('display_n');
+				document.querySelector('.fish > img + img').classList.add('display_n');
 			}
 			else {
 				//do nothing
 			}
 			//turn the fish down
-			document.querySelectorAll('.testing').classList.remove('right_forty_up');
-			document.querySelectorAll('.testing').classList.add('right_forty_down');
+			document.querySelector('.testing').classList.remove('right_forty_up');
+			document.querySelector('.testing').classList.add('right_forty_down');
 		}
 
 		//if it is going up AND right
 		else if (test_position[0] > test_position[2] && test_position[1] < test_position[3]) {
 			// when the right facing fish is off, turn it on
-			if (document.querySelectorAll('.fish > img:first').classList.contains('display_n')) {
-				document.querySelectorAll('.fish > img:first').classList.remove('display_n');
-				document.querySelectorAll('.fish > img:last').classList.add('display_n');
+			if (document.querySelector('.fish > img').classList.contains('display_n')) {
+				document.querySelector('.fish > img').classList.remove('display_n');
+				document.querySelector('.fish > img + img').classList.add('display_n');
 			}
 			else {
 				//do nothing
 			}
 
 			// turn the fish up	
-			document.querySelectorAll('.testing').classList.remove('right_forty_down');
-			document.querySelectorAll('.testing').classList.add('right_forty_up');
+			document.querySelector('.testing').classList.remove('right_forty_down');
+			document.querySelector('.testing').classList.add('right_forty_up');
 
 		}
 
 		//if it is going up AND left
 		else if (test_position[0] > test_position[2] && test_position[1] > test_position[3]) {
 			// when the left facing fish is off, turn it on
-			if (document.querySelectorAll('.fish > img:last').classList.contains('display_n')) {
-				document.querySelectorAll('.fish > img:last').classList.remove('display_n');
-				document.querySelectorAll('.fish > img:first').classList.add('display_n');
+			if (document.querySelector('.fish > img + img').classList.contains('display_n')) {
+				document.querySelector('.fish > img + img').classList.remove('display_n');
+				document.querySelector('.fish > img').classList.add('display_n');
 			}
 			else {
 				//do nothing
@@ -141,9 +141,9 @@ function makeNewPosition() {
 		//if it is going down AND left
 		else if (test_position[0] < test_position[2] && test_position[1] > test_position[3]) {
 			// when the left facing fish is off, turn it on
-			if (document.querySelectorAll('.fish > img:last').classList.contains('display_n')) {
-				document.querySelectorAll('.fish > img:last').classList.remove('display_n');
-				document.querySelectorAll('.fish > img:first').classList.add('display_n');
+			if (document.querySelector('.fish > img + img').classList.contains('display_n')) {
+				document.querySelector('.fish > img + img').classList.remove('display_n');
+				document.querySelector('.fish > img').classList.add('display_n');
 			}
 			else {
 				//do nothing
