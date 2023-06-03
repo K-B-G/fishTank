@@ -54,8 +54,8 @@ function makeNewPosition() {
 	//var bounds_h = nav_h + fish_h + tank_h + gravel_h + footer_h + 
 	var fish_h = document.querySelector('.fish > img').offsetHeight;
 	var fish_w = document.querySelector('.fish > img').offsetWidth;
-	var h = $('#tank').height() - (fish_h - 20);
-	var w = $('#tank').width() - (fish_w - 20);
+	var h = document.querySelector('#tank').offsetHeight - (fish_h - 20);
+	var w = document.querySelector('#tank').offsetWidth; - (fish_w - 20);
 	/*var fish = 2;
 	for(i=0; i< fish; i++){}*/
 
