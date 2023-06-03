@@ -1,6 +1,6 @@
 
 	
-	$(document).ready(function(){
+	document.querySelector(document).ready(function(){
 		$(".button-collapse").sideNav();
    		$('select').material_select();
 		fishSwim();
