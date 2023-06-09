@@ -32,10 +32,10 @@ $('#fish').animate({ top: newq[0], left: newq[1] }, 5000, function(){
 };*/
 
 var counter = [];
-var test_position = [];
+
 //This will mostly stay the same, just converting Jquery to vanilla ES6
 function fishSwim() {	
-
+var test_position = [];
 function makeNewPosition() {
 
 	// Get viewport dimensions (remove the dimension of the div)
