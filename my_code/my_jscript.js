@@ -20,6 +20,8 @@ function fishSwim() {
 
 	const fish_h = document.querySelector('.fish > img').offsetHeight;
 	const fish_w = document.querySelector('.fish > img').offsetWidth;
+	let nh = 0;
+	let nw = 0;
 function makeNewPosition() {
 
 	// Get viewport dimensions (remove the dimension of the div)
@@ -27,16 +29,17 @@ function makeNewPosition() {
 	//Then have something that subtracks the size value of FISH, NAV, and FOOTER from computed TANK diminsions
 	//var bounds_h = nav_h + fish_h + tank_h + gravel_h + footer_h + 
 
-	var h = document.querySelector('#tank').offsetHeight - (fish_h - 20);
-	var w = document.querySelector('#tank').offsetWidth; - (fish_w - 20);
+	let h = document.querySelector('#tank').offsetHeight - (fish_h - 20);
+	let w = document.querySelector('#tank').offsetWidth; - (fish_w - 20);
 
 
-	var nh = Math.floor(Math.random() * h);
-	var nw = Math.floor(Math.random() * w);
-	var swim_speed = Math.floor(Math.random() * (8000 - 3000) + 3000);
+	let nh = Math.floor(Math.random() * h);
+	let nw = Math.floor(Math.random() * w);
+	let swim_speed = Math.floor(Math.random() * (8000 - 3000) + 3000);
 
 	//alert(fish_w);
 	return [nh, nw, swim_speed, 1];
+	
 
 }
 	var newq = makeNewPosition();
