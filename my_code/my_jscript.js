@@ -6,58 +6,30 @@ $(document).ready(function () {
 	fishSwim();
 
 });
+//NOTE: I like to use pascal case for global objects that contain helper functions or variables as a reminder that thet are global.
 //GLOBAL HELPER FUNCTIONS 
-function getSum(total, num) {
+var GlobeHlp = {
+getSum: function (total, num) {
 	return total + num;
 }
-/*function makeNewPosition(){
- 
-// Get viewport dimensions (remove the dimension of the div)
-var h = $(window).height() - 150;
-var w = $(window).width() - 150;
- 
-var nh = Math.floor(Math.random() * h);
-var nw = Math.floor(Math.random() * w);
- 
-return [nh,nw];    
- 
-}
-
-function animateDiv(){
-var newq = makeNewPosition();
-$('#fish').animate({ top: newq[0], left: newq[1] }, 5000, function(){
-  animateDiv();        
-});
- 
-};*/
-
+}; 
 var counter = [];
-
+	var test_position = [];
 //This will mostly stay the same, just converting Jquery to vanilla ES6
 function fishSwim() {	
-var test_position = [];
+
+	const fish_h = document.querySelector('.fish > img').offsetHeight;
+	const fish_w = document.querySelector('.fish > img').offsetWidth;
 function makeNewPosition() {
 
 	// Get viewport dimensions (remove the dimension of the div)
 	//do some stuff to get the height and width of TANK
 	//Then have something that subtracks the size value of FISH, NAV, and FOOTER from computed TANK diminsions
-	//var nav_h = $nav.height();
-	//var nav_w =  $nav.width();
-	//var fish_h = $('#fish').height();
-	//var fish_w = $('#fish").width();
-	//var tank_h = $('#tank').height();
-	//var tank_w = $('#tank').width();
-	//var gravel_h = $('#gravel').height();
-	//var gravel_w = $('#gravel').width();
-	//var footer_h = $('#footer').height();
-	//var footer_w = $('#footer').width();
 	//var bounds_h = nav_h + fish_h + tank_h + gravel_h + footer_h + 
-	var fish_h = document.querySelector('.fish > img').offsetHeight;
-	var fish_w = document.querySelector('.fish > img').offsetWidth;
+
 	var h = document.querySelector('#tank').offsetHeight - (fish_h - 20);
 	var w = document.querySelector('#tank').offsetWidth; - (fish_w - 20);
-	/*var fish = 2;
-	for(i=0; i< fish; i++){}*/
+
 
 	var nh = Math.floor(Math.random() * h);
 	var nw = Math.floor(Math.random() * w);
@@ -67,13 +39,6 @@ function makeNewPosition() {
 	return [nh, nw, swim_speed, 1];
 
 }
-
-
-	
-
-
-
-
 	var newq = makeNewPosition();
 	test_position.push(newq[0], newq[1]);
 	var z_counter = Math.floor((Math.random() * 2) + 1);
@@ -85,9 +50,7 @@ function makeNewPosition() {
 	//NOTE if top number is low, that means it's high
 	//	IF Left numbers is low, that means it's lefter
 
-	//$('.fish').hasClass('.right_forty_down')
-
-	if (counter.reduce(getSum) != 1) {
+	if (counter.reduce(GlobeHlp.getSum) != 1) {
 
 		// if it is going down AND right
 		if (test_position[0] < test_position[2] && test_position[1] < test_position[3]) {
@@ -192,7 +155,7 @@ function makeNewPosition() {
 	}
 
 	// Keeps the COUNTER ARRAY from getting big
-	if (counter.reduce(getSum) > 1) {
+	if (counter.reduce(GlobeHlp.getSum) > 1) {
 		counter.splice(2, 1);
 		//alert(test_position.valueOf());
 		test_position.splice(0, 2);
