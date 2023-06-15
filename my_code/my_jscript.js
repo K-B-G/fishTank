@@ -13,50 +13,56 @@ getSum: function (total, num) {
 	return total + num;
 }
 }; 
-var counter = [];
-	var test_position = [];
+//var counter = [];
+	//var test_position = [];
 //This will mostly stay the same, just converting Jquery to vanilla ES6
 function fishSwim() {	
-
-	const fish_h = document.querySelector('.fish > img').offsetHeight;
-	const fish_w = document.querySelector('.fish > img').offsetWidth;
-	let nh = 0;
-	let nw = 0;
+	
+	let fishProp = {
+	fish_topP: 0,
+	fish_leftP: 0,
+	nh : 0,
+	nw : 0,
+	swim_speed: 0,
+	counter : [0],
+	z_counter: 0,
+	};
 function makeNewPosition() {
 
 	// Get viewport dimensions (remove the dimension of the div)
 	//do some stuff to get the height and width of TANK
 	//Then have something that subtracks the size value of FISH, NAV, and FOOTER from computed TANK diminsions
 	//var bounds_h = nav_h + fish_h + tank_h + gravel_h + footer_h + 
-
+	let fish_topP = document.querySelector('.fish').offsetTop;
+	let fish_leftP = document.querySelector('.fish').offsetLeft;
+	let fish_h = document.querySelector('.fish > img').offsetHeight;
+	let fish_w = document.querySelector('.fish > img').offsetWidth;
 	let h = document.querySelector('#tank').offsetHeight - (fish_h - 20);
 	let w = document.querySelector('#tank').offsetWidth; - (fish_w - 20);
-
-
 	let nh = Math.floor(Math.random() * h);
 	let nw = Math.floor(Math.random() * w);
 	let swim_speed = Math.floor(Math.random() * (8000 - 3000) + 3000);
+	let z_counter = Math.floor((Math.random() * 2) + 1);
 
 	//alert(fish_w);
-	return [nh, nw, swim_speed, 1];
-	
-
+	return  fishProp['fish_topP']=fish_topP, fishProp['fish_leftP']=fish_leftP,  fishProp['nh']=nh, fishProp['nw']=nw, fishProp['swim_speed']=swim_speed, fishProp.counter [1], fishProp['z_counter']=z_counter;
+    //fishProp['fish_h']=fish_h, fishProp['fish_w']=fish_w, 
 }
-	var newq = makeNewPosition();
-	test_position.push(newq[0], newq[1]);
-	var z_counter = Math.floor((Math.random() * 2) + 1);
+	makeNewPosition();
+	//test_position.push(newq[0], newq[1]);
+	//var z_counter = Math.floor((Math.random() * 2) + 1);
 	// Pushes 3rd array value to COUNTER ARRAY
-	counter.push(newq[3]);
+	//counter.push(newq[3]);
 
 	/* Start of ENHANCED FISH ANIMATION */
 
 	//NOTE if top number is low, that means it's high
 	//	IF Left numbers is low, that means it's lefter
 
-	if (counter.reduce(GlobeHlp.getSum) != 1) {
+	if (fishProp.counter.reduce(GlobeHlp.getSum) != 1) {
 
 		// if it is going down AND right
-		if (test_position[0] < test_position[2] && test_position[1] < test_position[3]) {
+		if (fishProp.fish_topP < fishProp.nh && fishProp.fish_leftP < fishProp.nw) {
 
 			if (document.querySelector('.fish > img').classList.contains('display_n')) {
 				document.querySelector('.fish > img').classList.remove('display_n');
@@ -71,7 +77,7 @@ function makeNewPosition() {
 		}
 
 		//if it is going up AND right
-		else if (test_position[0] > test_position[2] && test_position[1] < test_position[3]) {
+		else if (fishProp.fish_topP > fishProp.nh && fishProp.fish_leftP < fishProp.nw) {
 			// when the right facing fish is off, turn it on
 			if (document.querySelector('.fish > img').classList.contains('display_n')) {
 				document.querySelector('.fish > img').classList.remove('display_n');
@@ -88,7 +94,7 @@ function makeNewPosition() {
 		}
 
 		//if it is going up AND left
-		else if (test_position[0] > test_position[2] && test_position[1] > test_position[3]) {
+		else if (fishProp.fish_topP > fishProp.nh && fishProp.fish_leftP > fishProp.nw) {
 			// when the left facing fish is off, turn it on
 			if (document.querySelector('.fish > img + img').classList.contains('display_n')) {
 				document.querySelector('.fish > img + img').classList.remove('display_n');
@@ -105,7 +111,7 @@ function makeNewPosition() {
 		}
 
 		//if it is going down AND left
-		else if (test_position[0] < test_position[2] && test_position[1] > test_position[3]) {
+		else if (fishProp.fish_topP < fishProp.nh && fishProp.fish_leftP > fishProp.nw) {
 			// when the left facing fish is off, turn it on
 			if (document.querySelector('.fish > img + img').classList.contains('display_n')) {
 				document.querySelector('.fish > img + img').classList.remove('display_n');
@@ -138,7 +144,7 @@ function makeNewPosition() {
 
 
 	// Adjusts the Z-INDEX on FISH
-	if (z_counter == 1) {
+	if (fishProp.z_counter == 1) {
 		if (document.querySelector('.fish').classList.contains('z_4')) {
 			document.querySelector('.fish').classList.remove('z_4');
 			document.querySelector('.fish').classList.add('z_2');
@@ -158,7 +164,7 @@ function makeNewPosition() {
 	}
 
 	// Keeps the COUNTER ARRAY from getting big
-	if (counter.reduce(GlobeHlp.getSum) > 1) {
+	/*if (counter.reduce(GlobeHlp.getSum) > 1) {
 		counter.splice(2, 1);
 		//alert(test_position.valueOf());
 		test_position.splice(0, 2);
@@ -166,11 +172,12 @@ function makeNewPosition() {
 	else {
 		//alert(test_position.valueOf());
 	}
+	*/
 
 
 
 
-	$('.fish').animate({ top: newq[0], left: newq[1] }, newq[2], function () {
+	$('.fish').animate({ top: fishProp.nh, left: fishProp.nw }, fishProp.swim_speed, function () {
 
 		//alert(test_position.valueOf());
 		fishSwim();
