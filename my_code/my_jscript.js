@@ -9,48 +9,48 @@ $(document).ready(function () {
 //NOTE: I like to use pascal case for global objects that contain helper functions or variables as a reminder that thet are global.
 //GLOBAL HELPER FUNCTIONS 
 var GlobeHlp = {
-getSum: function (total, num) {
-	return total + num;
-}
-}; 
+	getSum: function (total, num) {
+		return total + num;
+	}
+};
 //var counter = [];
-	//var test_position = [];
+//var test_position = [];
 //This will mostly stay the same, just converting Jquery to vanilla ES6
-function fishSwim() {	
-	
+function fishSwim() {
+
 	let fishProp = {
-	fish_topP: 0,
-	fish_leftP: 0,
-	nh : 0,
-	nw : 0,
-	swim_speed: 0,
-	counter : [0],
-	z_counter: 0,
+		fishTopP: 0,
+		fishLeftP: 0,
+		fishNuTop: 0,
+		fishNuLeft: 0,
+		swimSpeed: 0,
+		counter: [0],
+		zCounter: 0,
 	};
-function makeNewPosition() {
+	//This is what moves the fish to a new posistion
+	function makeNewPosition() {
 
-	// Get viewport dimensions (remove the dimension of the div)
-	//do some stuff to get the height and width of TANK
-	//Then have something that subtracks the size value of FISH, NAV, and FOOTER from computed TANK diminsions
-	//var bounds_h = nav_h + fish_h + tank_h + gravel_h + footer_h + 
-	let fish_topP = document.querySelector('.fish').offsetTop;
-	let fish_leftP = document.querySelector('.fish').offsetLeft;
-	let fish_h = document.querySelector('.fish > img').offsetHeight;
-	let fish_w = document.querySelector('.fish > img').offsetWidth;
-	let h = document.querySelector('#tank').offsetHeight - (fish_h - 20);
-	let w = document.querySelector('#tank').offsetWidth; - (fish_w - 20);
-	let nh = Math.floor(Math.random() * h);
-	let nw = Math.floor(Math.random() * w);
-	let swim_speed = Math.floor(Math.random() * (8000 - 3000) + 3000);
-	let z_counter = Math.floor((Math.random() * 2) + 1);
+		// Get viewport dimensions (remove the dimension of the div)
+		//do some stuff to get the height and width of TANK
+		//Then have something that subtracks the size value of FISH, NAV, and FOOTER from computed TANK diminsions
+		//var bounds_h = nav_h + fishImgHght + tank_h + gravel_h + footer_h + 
+		let fishTopP = document.querySelector('.fish').offsetTop;
+		let fishLeftP = document.querySelector('.fish').offsetLeft;
+		let fishImgHght = document.querySelector('.fish > img').offsetHeight;
+		let fishImgWdth = document.querySelector('.fish > img').offsetWidth;
+		let tankHght = document.querySelector('#tank').offsetHeight - (fishImgHght - 20);
+		let tankWdth = document.querySelector('#tank').offsetWidth; - (fishImgWdth - 20);
+		let fishNuTop = Math.floor(Math.random() * tankHght);
+		let fishNuLeft = Math.floor(Math.random() * tankWdth);
+		let swimSpeed = Math.floor(Math.random() * (8000 - 3000) + 3000);
+		let zCounter = Math.floor((Math.random() * 2) + 1);
 
-	//alert(fish_w);
-	return  fishProp['fish_topP']=fish_topP, fishProp['fish_leftP']=fish_leftP,  fishProp['nh']=nh, fishProp['nw']=nw, fishProp['swim_speed']=swim_speed, fishProp.counter [1], fishProp['z_counter']=z_counter;
-    //fishProp['fish_h']=fish_h, fishProp['fish_w']=fish_w, 
-}
+
+		return fishProp['fishTopP'] = fishTopP, fishProp['fishLeftP'] = fishLeftP, fishProp['fishNuTop'] = fishNuTop, fishProp['fishNuLeft'] = fishNuLeft, fishProp['swimSpeed'] = swimSpeed, fishProp.counter[1], fishProp['zCounter'] = zCounter;
+	}
 	makeNewPosition();
 	//test_position.push(newq[0], newq[1]);
-	//var z_counter = Math.floor((Math.random() * 2) + 1);
+	//var zCounter = Math.floor((Math.random() * 2) + 1);
 	// Pushes 3rd array value to COUNTER ARRAY
 	//counter.push(newq[3]);
 
@@ -62,7 +62,7 @@ function makeNewPosition() {
 	if (fishProp.counter.reduce(GlobeHlp.getSum) != 1) {
 
 		// if it is going down AND right
-		if (fishProp.fish_topP < fishProp.nh && fishProp.fish_leftP < fishProp.nw) {
+		if (fishProp.fishTopP < fishProp.fishNuTop && fishProp.fishLeftP < fishProp.fishNuLeft) {
 
 			if (document.querySelector('.fish > img').classList.contains('display_n')) {
 				document.querySelector('.fish > img').classList.remove('display_n');
@@ -77,7 +77,7 @@ function makeNewPosition() {
 		}
 
 		//if it is going up AND right
-		else if (fishProp.fish_topP > fishProp.nh && fishProp.fish_leftP < fishProp.nw) {
+		else if (fishProp.fishTopP > fishProp.fishNuTop && fishProp.fishLeftP < fishProp.fishNuLeft) {
 			// when the right facing fish is off, turn it on
 			if (document.querySelector('.fish > img').classList.contains('display_n')) {
 				document.querySelector('.fish > img').classList.remove('display_n');
@@ -94,7 +94,7 @@ function makeNewPosition() {
 		}
 
 		//if it is going up AND left
-		else if (fishProp.fish_topP > fishProp.nh && fishProp.fish_leftP > fishProp.nw) {
+		else if (fishProp.fishTopP > fishProp.fishNuTop && fishProp.fishLeftP > fishProp.fishNuLeft) {
 			// when the left facing fish is off, turn it on
 			if (document.querySelector('.fish > img + img').classList.contains('display_n')) {
 				document.querySelector('.fish > img + img').classList.remove('display_n');
@@ -111,7 +111,7 @@ function makeNewPosition() {
 		}
 
 		//if it is going down AND left
-		else if (fishProp.fish_topP < fishProp.nh && fishProp.fish_leftP > fishProp.nw) {
+		else if (fishProp.fishTopP < fishProp.fishNuTop && fishProp.fishLeftP > fishProp.fishNuLeft) {
 			// when the left facing fish is off, turn it on
 			if (document.querySelector('.fish > img + img').classList.contains('display_n')) {
 				document.querySelector('.fish > img + img').classList.remove('display_n');
@@ -144,7 +144,7 @@ function makeNewPosition() {
 
 
 	// Adjusts the Z-INDEX on FISH
-	if (fishProp.z_counter == 1) {
+	if (fishProp.zCounter == 1) {
 		if (document.querySelector('.fish').classList.contains('z_4')) {
 			document.querySelector('.fish').classList.remove('z_4');
 			document.querySelector('.fish').classList.add('z_2');
@@ -177,7 +177,7 @@ function makeNewPosition() {
 
 
 
-	$('.fish').animate({ top: fishProp.nh, left: fishProp.nw }, fishProp.swim_speed, function () {
+	$('.fish').animate({ top: fishProp.fishNuTop, left: fishProp.fishNuLeft }, fishProp.swimSpeed, function () {
 
 		//alert(test_position.valueOf());
 		fishSwim();
@@ -341,5 +341,3 @@ $("button").click(function(){
 });
 		*/
 /** functoin that moves image from spot 1 to spot 2 on button click.*/
-
-
