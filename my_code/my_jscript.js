@@ -13,9 +13,8 @@ var GlobeHlp = {
 		return total + num;
 	}
 };
-//var counter = [];
-//var test_position = [];
-//This will mostly stay the same, just converting Jquery to vanilla ES6
+
+//This holds the fishes properties to manipulate and the functions to move it around
 function fishSwim() {
 
 	let fishProp = {
@@ -64,9 +63,8 @@ function fishSwim() {
 		// if it is going down AND right
 		if (fishProp.fishTopP < fishProp.fishNuTop && fishProp.fishLeftP < fishProp.fishNuLeft) {
 
-			if (document.querySelector('.fish > img').classList.contains('display_n')) {
-				document.querySelector('.fish > img').classList.remove('display_n');
-				document.querySelector('.fish > img + img').classList.add('display_n');
+			if (document.querySelector('.fish > img').classList.contains('y_180_rotate')) {
+				document.querySelector('.fish > img').classList.remove('y_180_rotate');
 			}
 			else {
 				//do nothing
@@ -79,9 +77,8 @@ function fishSwim() {
 		//if it is going up AND right
 		else if (fishProp.fishTopP > fishProp.fishNuTop && fishProp.fishLeftP < fishProp.fishNuLeft) {
 			// when the right facing fish is off, turn it on
-			if (document.querySelector('.fish > img').classList.contains('display_n')) {
-				document.querySelector('.fish > img').classList.remove('display_n');
-				document.querySelector('.fish > img + img').classList.add('display_n');
+			if (document.querySelector('.fish > img').classList.contains('y_180_rotate')) {
+				document.querySelector('.fish > img').classList.remove('y_180_rotate');
 			}
 			else {
 				//do nothing
@@ -96,12 +93,11 @@ function fishSwim() {
 		//if it is going up AND left
 		else if (fishProp.fishTopP > fishProp.fishNuTop && fishProp.fishLeftP > fishProp.fishNuLeft) {
 			// when the left facing fish is off, turn it on
-			if (document.querySelector('.fish > img + img').classList.contains('display_n')) {
-				document.querySelector('.fish > img + img').classList.remove('display_n');
-				document.querySelector('.fish > img').classList.add('display_n');
+			if (document.querySelector('.fish > img').classList.contains('y_180_rotate')) {
+					//do nothing
 			}
 			else {
-				//do nothing
+				document.querySelector('.fish > img').classList.add('y_180_rotate');
 			}
 
 			// turn the fish down	
@@ -113,17 +109,16 @@ function fishSwim() {
 		//if it is going down AND left
 		else if (fishProp.fishTopP < fishProp.fishNuTop && fishProp.fishLeftP > fishProp.fishNuLeft) {
 			// when the left facing fish is off, turn it on
-			if (document.querySelector('.fish > img + img').classList.contains('display_n')) {
-				document.querySelector('.fish > img + img').classList.remove('display_n');
-				document.querySelector('.fish > img').classList.add('display_n');
+			if (document.querySelector('.fish > img').classList.contains('y_180_rotate')) {
+					//do nothing
 			}
 			else {
-				//do nothing
+				document.querySelector('.fish > img').classList.add('y_180_rotate');
 			}
 
 			// turn the fish up
-			document.querySelector('.testing').classList.remove('right_forty_down');
-			document.querySelector('.testing').classList.add('right_forty_up');
+			document.querySelector('.testing').classList.add('left_forty_down');
+			document.querySelector('.testing').classList.remove('right_forty_up') || document.querySelector('.testing').classList.remove('right_forty_down') || document.querySelector('.testing').classList.remove('left_forty_up');
 
 		}
 
