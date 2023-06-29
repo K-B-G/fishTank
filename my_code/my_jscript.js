@@ -18,10 +18,10 @@ var GlobeHlp = {
 function fishSwim() {
 
 	let fishProp = {
-		fishTopP: 0,
-		fishLeftP: 0,
-		fishNuTop: 0,
-		fishNuLeft: 0,
+		topP: 0,
+		leftP: 0,
+		nuTop: 0,
+		nuLeft: 0,
 		swimSpeed: 0,
 		counter: [0],
 		zCounter: 0,
@@ -33,19 +33,19 @@ function fishSwim() {
 		//do some stuff to get the height and width of TANK
 		//Then have something that subtracks the size value of FISH, NAV, and FOOTER from computed TANK diminsions
 		//var bounds_h = nav_h + fishImgHght + tank_h + gravel_h + footer_h + 
-		let fishTopP = document.querySelector('.fish').offsetTop;
-		let fishLeftP = document.querySelector('.fish').offsetLeft;
-		let fishImgHght = document.querySelector('.fish > img').offsetHeight;
-		let fishImgWdth = document.querySelector('.fish > img').offsetWidth;
+		let topP = document.querySelector('.fish').offsetTop;
+		let leftP = document.querySelector('.fish').offsetLeft;
+		let fishImgHght = document.querySelector('.angle').offsetHeight;
+		let fishImgWdth = document.querySelector('.angle').offsetWidth;
 		let tankHght = document.querySelector('#tank').offsetHeight - (fishImgHght - 20);
 		let tankWdth = document.querySelector('#tank').offsetWidth; - (fishImgWdth - 20);
-		let fishNuTop = Math.floor(Math.random() * tankHght);
-		let fishNuLeft = Math.floor(Math.random() * tankWdth);
+		let nuTop = Math.floor(Math.random() * tankHght);
+		let nuLeft = Math.floor(Math.random() * tankWdth);
 		let swimSpeed = Math.floor(Math.random() * (8000 - 3000) + 3000);
 		let zCounter = Math.floor((Math.random() * 2) + 1);
 
 
-		return fishProp['fishTopP'] = fishTopP, fishProp['fishLeftP'] = fishLeftP, fishProp['fishNuTop'] = fishNuTop, fishProp['fishNuLeft'] = fishNuLeft, fishProp['swimSpeed'] = swimSpeed, fishProp.counter[1], fishProp['zCounter'] = zCounter;
+		return fishProp['topP'] = topP, fishProp['leftP'] = leftP, fishProp['nuTop'] = nuTop, fishProp['nuLeft'] = nuLeft, fishProp['swimSpeed'] = swimSpeed, fishProp.counter[1], fishProp['zCounter'] = zCounter;
 	}
 	makeNewPosition();
 	//test_position.push(newq[0], newq[1]);
@@ -61,80 +61,36 @@ function fishSwim() {
 	if (fishProp.counter.reduce(GlobeHlp.getSum) != 1) {
 
 		// if it is going down AND right
-		if (fishProp.fishTopP < fishProp.fishNuTop && fishProp.fishLeftP < fishProp.fishNuLeft) {
+		if (fishProp.topP < fishProp.nuTop && fishProp.leftP < fishProp.nuLeft) {
 
-			if (document.querySelector('.fish > img').classList.contains('y_180_rotate')) {
-				document.querySelector('.fish > img').classList.remove('y_180_rotate');
-			}
-			else {
-				//do nothing
-			}
-			//turn the fish down
-			document.querySelector('.testing').classList.remove('right_forty_up');
-			document.querySelector('.testing').classList.add('right_forty_down');
+			document.querySelector('.angle').classList.remove('y_180_rotate', 'y_180_rotate_down', 'y_180_rotate_up', 'upward');
+
+			document.querySelector('.angle').classList.add('downward');
 		}
 
 		//if it is going up AND right
-		else if (fishProp.fishTopP > fishProp.fishNuTop && fishProp.fishLeftP < fishProp.fishNuLeft) {
-			// when the right facing fish is off, turn it on
-			if (document.querySelector('.fish > img').classList.contains('y_180_rotate')) {
-				document.querySelector('.fish > img').classList.remove('y_180_rotate');
+		else if (fishProp.topP > fishProp.nuTop && fishProp.leftP < fishProp.nuLeft) {
+			document.querySelector('.angle').classList.remove('y_180_rotate', 'y_180_rotate_down', 'y_180_rotate_up', 'downward');
+			document.querySelector('.angle').classList.add('upward');
 			}
-			else {
-				//do nothing
-			}
-
-			// turn the fish up	
-			document.querySelector('.testing').classList.remove('right_forty_down');
-			document.querySelector('.testing').classList.add('right_forty_up');
-
-		}
 
 		//if it is going up AND left
-		else if (fishProp.fishTopP > fishProp.fishNuTop && fishProp.fishLeftP > fishProp.fishNuLeft) {
-			// when the left facing fish is off, turn it on
-			if (document.querySelector('.fish > img').classList.contains('y_180_rotate')) {
-					//do nothing
-			}
-			else {
-				document.querySelector('.fish > img').classList.add('y_180_rotate');
-			}
-
-			// turn the fish down	
-			document.querySelector('.testing').classList.remove('right_forty_up');
-			document.querySelector('.testing').classList.add('right_forty_down');
+		else if (fishProp.topP > fishProp.nuTop && fishProp.leftP > fishProp.nuLeft) {
+			document.querySelector('.angle').classList.remove('y_180_rotate', 'y_180_rotate_down', 'downward', 'upward');
+			document.querySelector('.angle').classList.add('y_180_rotate_up');
 
 		}
 
 		//if it is going down AND left
-		else if (fishProp.fishTopP < fishProp.fishNuTop && fishProp.fishLeftP > fishProp.fishNuLeft) {
-			// when the left facing fish is off, turn it on
-			if (document.querySelector('.fish > img').classList.contains('y_180_rotate')) {
-					//do nothing
-			}
-			else {
-				document.querySelector('.fish > img').classList.add('y_180_rotate');
-			}
-
-			// turn the fish up
-			document.querySelector('.testing').classList.add('left_forty_down');
-			document.querySelector('.testing').classList.remove('right_forty_up') || document.querySelector('.testing').classList.remove('right_forty_down') || document.querySelector('.testing').classList.remove('left_forty_up');
-
+		else if (fishProp.topP < fishProp.nuTop && fishProp.leftP > fishProp.nuLeft) {
+			document.querySelector('.angle').classList.remove('y_180_rotate', 'y_180_rotate_up', 'upward', 'downward');
+			document.querySelector('.angle').classList.add('y_180_rotate_down');
 		}
 
 		else {
 
 			//its all good man
 		}
-
-
-		//document.querySelector('.fish > img:first').replaceWith('<img src="https://www.placecage.com/g/102/102" alt="" height="100" width="100">');
-
-	}
-
-
-	else {
-		//do nothing
 	}
 
 
@@ -172,14 +128,13 @@ function fishSwim() {
 
 
 
-	$('.fish').animate({ top: fishProp.fishNuTop, left: fishProp.fishNuLeft }, fishProp.swimSpeed, function () {
+	$('.fish').animate({ top: fishProp.nuTop, left: fishProp.nuLeft }, fishProp.swimSpeed, function () {
 
 		//alert(test_position.valueOf());
 		fishSwim();
 
 
 	});
-
 }
 
 
@@ -300,39 +255,4 @@ $('#btn1').click(function () {
 	changeMiddle();
 	changeFore();
 	changeGravel();
-
 });
-
-
-
-
-
-
-/*$(document).ready(function(){
-$("#btn1").click(function(){
-	var fish = $("#fish");
-	startAnimation();
-	function startAnimation(){
-	fish.animate({right: "300"});
-	fish.animate({bottom: "300"});
-	fish.animate({left: "0"});
-	fish.animate({top: "30"}, "slow", startAnimation);
-}
- });
-	});*/
-
-/*$(document).ready(function(){
-$("button").click(function(){
-	var div = $("div");
-	startAnimation();
-	function startAnimation(){
-		//div.animate({marginLeft: 300}, "slow");
-		div.animate({marginDown: 50}, "slow");
-		 
-	   /* div.animate({bottom: 100}, "slow");
-		div.animate({top: 100}, "slow", startAnimation);
-	}
-});
-});
-		*/
-/** functoin that moves image from spot 1 to spot 2 on button click.*/
