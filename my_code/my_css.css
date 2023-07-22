@@ -271,6 +271,7 @@ opacity: 0.3;*/
   display: block;
   position: absolute;
   width: 30%;
+  transform: translateX(0px) translateY(0px);
 }
 
 .z_2 {

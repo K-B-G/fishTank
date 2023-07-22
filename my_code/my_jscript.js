@@ -1,11 +1,15 @@
 "use strict";
 
+//const anime = require("animejs");
+
 $(document).ready(function () {
 	$(".button-collapse").sideNav();
 	$('select').material_select();
-	fishSwim();
-
 });
+//WORK ON THIS LATER 
+document.querySelector("[name='feesh']").addEventListener("click", fishSwim);
+
+
 //NOTE: I like to use pascal case for global objects that contain helper functions or variables as a reminder that thet are global.
 //GLOBAL HELPER FUNCTIONS 
 var GlobeHlp = {
@@ -16,6 +20,8 @@ var GlobeHlp = {
 
 //This holds the fishes properties to manipulate and the functions to move it around
 function fishSwim() {
+
+	let onkneemay;
 
 	let fishProp = {
 		topP: 0,
@@ -33,15 +39,15 @@ function fishSwim() {
 		//do some stuff to get the height and width of TANK
 		//Then have something that subtracks the size value of FISH, NAV, and FOOTER from computed TANK diminsions
 		//var bounds_h = nav_h + fishImgHght + tank_h + gravel_h + footer_h + 
-		let topP = document.querySelector('.fish').offsetTop;
-		let leftP = document.querySelector('.fish').offsetLeft;
+		let topP = document.querySelector('.fish').computedStyleMap().get('transform')[1].y.value;
+		let leftP = document.querySelector('.fish').computedStyleMap().get('transform')[0].x.value;
 		let fishImgHght = document.querySelector('.angle').offsetHeight;
 		let fishImgWdth = document.querySelector('.angle').offsetWidth;
 		let tankHght = document.querySelector('#tank').offsetHeight - (fishImgHght - 20);
 		let tankWdth = document.querySelector('#tank').offsetWidth; - (fishImgWdth - 20);
 		let nuTop = Math.floor(Math.random() * tankHght);
 		let nuLeft = Math.floor(Math.random() * tankWdth);
-		let swimSpeed = Math.floor(Math.random() * (8000 - 3000) + 3000);
+		let swimSpeed = Math.floor(Math.random() * 5000 + 3000);
 		let zCounter = Math.floor((Math.random() * 2) + 1);
 
 
@@ -113,28 +119,29 @@ function fishSwim() {
 			//do nothing
 		}
 	}
-
-	// Keeps the COUNTER ARRAY from getting big
-	/*if (counter.reduce(GlobeHlp.getSum) > 1) {
-		counter.splice(2, 1);
-		//alert(test_position.valueOf());
-		test_position.splice(0, 2);
-	}
-	else {
-		//alert(test_position.valueOf());
-	}
-	*/
-
-
-
-
-	$('.fish').animate({ top: fishProp.nuTop, left: fishProp.nuLeft }, fishProp.swimSpeed, function () {
+	
+	/*$('.fish').animate({ top: fishProp.nuTop, left: fishProp.nuLeft }, fishProp.swimSpeed, function () {
 
 		//alert(test_position.valueOf());
 		fishSwim();
 
-
+	});*/
+	onkneemay = anime({
+		targets: '.fish',
+		translateX: fishProp.nuLeft,
+		translateY: fishProp.nuTop,
+		duration: fishProp.swimSpeed,
+		direction: 'normal',
+		delay: 100,
+		easing: 'easeOutQuart',
+		complete: function (){
+			//console.log(fishProp.topP);
+			fishSwim();
+			
+		}
 	});
+	
+
 }
 
 
@@ -250,9 +257,20 @@ function changeGravel() {
 	}
 }
 
+//WORK ON LATER IT'S TO ADD NEW FISH ELEMENTS PROPPER LOOK INTO DOCUMENT FRAGMENTS
+ /*function addFish(){
+	const nufish = '<div class="fish z_4"> <img class="angle betta_fish" src="img/vector_fighting_fish_by_stu_artgraphics-d533k02.png" alt="" height="479" width="511">';
+	let fishDiv = document.createElement('div');
+	fishD
+	document.querySelector('.veryback').insertAdjacentElement("afterend", fishDiv).setAttribute('class', 'fish z_4');
+	//document.getElementById('tank').appendChild(fishDiv).setAttribute('class', 'fish z_4').bind(fishSwim);
+	fishSwim();
+}
+*/
+
 $('#btn1').click(function () {
 	changeBackground();
 	changeMiddle();
 	changeFore();
 	changeGravel();
-});
+})
