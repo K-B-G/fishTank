@@ -45,8 +45,8 @@ document.querySelector("[name='feesh']").addEventListener("click", addFish);
 		//This is what makes the new values to move the fish
 		let makeNewPosition = function() {
 			
-			let topP = document.querySelector('.fish').computedStyleMap().get('transform')[1].y.value;
-			let leftP = document.querySelector('.fish').computedStyleMap().get('transform')[0].x.value;
+			let topP = fishProp.fishy.computedStyleMap().get('transform')[1].y.value;
+			let leftP = fishProp.fishy.computedStyleMap().get('transform')[0].x.value;
 			let fishImgHght = document.querySelector('.angle').offsetHeight;
 			let fishImgWdth = document.querySelector('.angle').offsetWidth;
 			let tankHght = document.querySelector('#tank').offsetHeight - (fishImgHght - 20);
@@ -69,28 +69,28 @@ if (fishProp.counter.reduce(GLOBHLP.getSum) != 1) {
 	// if it is going down AND right
 	if (fishProp.topP < fishProp.nuTop && fishProp.leftP < fishProp.nuLeft) {
 
-		document.querySelector('.angle').classList.remove('y_180_rotate', 'y_180_rotate_down', 'y_180_rotate_up', 'upward');
+		fishProp.fishy.querySelector('.angle').classList.remove('y_180_rotate', 'y_180_rotate_down', 'y_180_rotate_up', 'upward');
 
-		document.querySelector('.angle').classList.add('downward');
+		fishProp.fishy.querySelector('.angle').classList.add('downward');
 	}
 
 	//if it is going up AND right
 	else if (fishProp.topP > fishProp.nuTop && fishProp.leftP < fishProp.nuLeft) {
-		document.querySelector('.angle').classList.remove('y_180_rotate', 'y_180_rotate_down', 'y_180_rotate_up', 'downward');
-		document.querySelector('.angle').classList.add('upward');
+		fishProp.fishy.querySelector('.angle').classList.remove('y_180_rotate', 'y_180_rotate_down', 'y_180_rotate_up', 'downward');
+		fishProp.fishy.querySelector('.angle').classList.add('upward');
 	}
 
 	//if it is going up AND left
 	else if (fishProp.topP > fishProp.nuTop && fishProp.leftP > fishProp.nuLeft) {
-		document.querySelector('.angle').classList.remove('y_180_rotate', 'y_180_rotate_down', 'downward', 'upward');
-		document.querySelector('.angle').classList.add('y_180_rotate_up');
+		fishProp.fishy.querySelector('.angle').classList.remove('y_180_rotate', 'y_180_rotate_down', 'downward', 'upward');
+		fishProp.fishy.querySelector('.angle').classList.add('y_180_rotate_up');
 
 	}
 
 	//if it is going down AND left
 	else if (fishProp.topP < fishProp.nuTop && fishProp.leftP > fishProp.nuLeft) {
-		document.querySelector('.angle').classList.remove('y_180_rotate', 'y_180_rotate_up', 'upward', 'downward');
-		document.querySelector('.angle').classList.add('y_180_rotate_down');
+		fishProp.fishy.querySelector('.angle').classList.remove('y_180_rotate', 'y_180_rotate_up', 'upward', 'downward');
+		fishProp.fishy.querySelector('.angle').classList.add('y_180_rotate_down');
 	}
 
 	else {
@@ -102,18 +102,18 @@ if (fishProp.counter.reduce(GLOBHLP.getSum) != 1) {
 
 // Adjusts the Z-INDEX on FISH
 if (fishProp.zCounter == 1) {
-	if (document.querySelector('.fish').classList.contains('z_4')) {
-		document.querySelector('.fish').classList.remove('z_4');
-		document.querySelector('.fish').classList.add('z_2');
+	if (fishProp.fishy.classList.contains('z_4')) {
+		fishProp.fishy.classList.remove('z_4');
+		fishProp.fishy.classList.add('z_2');
 	}
 	else {
 		//do nothing
 	}
 }
 else {
-	if (document.querySelector('.fish').classList.contains('z_2')) {
-		document.querySelector('.fish').classList.remove('z_2');
-		document.querySelector('.fish').classList.add('z_4');
+	if (fishProp.fishy.classList.contains('z_2')) {
+		fishProp.fishy.classList.remove('z_2');
+		fishProp.fishy.classList.add('z_4');
 	}
 	else {
 		//do nothing
