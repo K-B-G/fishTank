@@ -1,290 +1,144 @@
 <!doctype html>
 <html>
+
 <head>
-      <!--Import Google Icon Font-->
-      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>
-	  <script type="text/javascript" rel="preload" src="node_modules/animejs/lib/anime.min.js"></script>
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-       <link href="my_code/my_css.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-	   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
-      
+	<!--Import Google Icon Font-->
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="materialize/css/materialize.css" media="screen,projection"/>
+	<script type="text/javascript" rel="preload" src="node_modules/animejs/lib/anime.min.js"></script>
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link type="text/css" rel="stylesheet" href="my_code/my_css.css"  media="screen,projection"/>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+	<script type="text/javascript" src="lib/anime.min.js"></script>
 
-<style>
-	#tank{
-		box-shadow: none;
-		/*display: block;
-		width: 100%;*/
-		margin-bottom: 0;
-	}
-	.veryback{
-		display: block;
-		position: absolute;
-		width: 100%;
-	
-		z-index: 2;
-		/*background-color: lightpink;	*/
-	}
-	.middleground{
-		display: block;
-		position: absolute;
-		width: 100%;
-		
-		z-index: 4;
-		/*background-color: aquamarine;
-		opacity: 0.3;*/
-	}
-	
-	.foreground{
-		display: block;
-		position: absolute;
-		
-		width: 100%;
-	
-		z-index: 6;
-		/*background-color: aquamarine;
-		opacity: 0.3;*/
-	}
-	.gravel{
-		display: block;
-		position: absolute;
-		width: 100%;
-		z-index: 1;
-	}
-	.back_wall{
-		display: block;
-		position: absolute;
-		width: 100%;
-		z-index: 0;
-	}
-	
-	.fish{
-		display: block;
-		position: absolute;
-		width: 30%;
-	}
-	
-	.z_2{
-		z-index: 3;
-	}
-	.z_4{
-		z-index: 5;
-	}
-	
-	
-	.right_forty_up{
-		-ms-transform: rotate(-10deg); /* IE 9 */
-		-ms-transform-origin: center; /* IE 9 */
-		-webkit-transform: rotate(-10deg); /* Chrome, Safari, Opera */
-		-webkit-transform-origin: center; /* Chrome, Safari, Opera */
-		transform: rotate(-10deg);
-		transform-origin: center;
-		-o-transition: all .4s ease-in-out;
-		-ms-transition: all .4s ease-in-out;
-		-moz-transition: all .4s ease-in-out;
-		-webkit-transition: all .4s ease-in-out;
-		transition: all .4s ease-in-out;
-	}
-	
-	.right_forty_down{
-		-ms-transform: rotate(10deg); /* IE 9 */
-		-ms-transform-origin: center; /* IE 9 */
-		-webkit-transform: rotate(10deg); /* Chrome, Safari, Opera */
-		-webkit-transform-origin: center; /* Chrome, Safari, Opera */
-		transform: rotate(10deg);
-		transform-origin: center;
-		-o-transition: all .4s ease-in-out;
-		-ms-transition: all .4s ease-in-out;
-		-moz-transition: all .4s ease-in-out;
-		-webkit-transition: all .4s ease-in-out;
-		transition: all .4s ease-in-out;
-	}
-
-	.left_forty_up{
-	-ms-transform: rotate(10deg); /* IE 9 */
-    -ms-transform-origin: center; /* IE 9 */
-    -webkit-transform: rotate(10deg); /* Chrome, Safari, Opera */
-    -webkit-transform-origin: center; /* Chrome, Safari, Opera */
-    transform: rotate(10deg);
-    transform-origin: center;
-	-o-transition: all .4s ease-in-out;
-    -ms-transition: all .4s ease-in-out;
-    -moz-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
-		-moz-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-        -webkit-transform: scaleX(-1);
-        transform: scaleX(-1);
-        filter: FlipH;
-        -ms-filter: "FlipH";
-	}
-	.left_forty_down{
-		-ms-transform: rotate(-10deg); /* IE 9 */
-    -ms-transform-origin: center; /* IE 9 */
-    -webkit-transform: rotate(-10deg); /* Chrome, Safari, Opera */
-    -webkit-transform-origin: center; /* Chrome, Safari, Opera */
-    transform: rotate(-10deg);
-    transform-origin: center;
-		-o-transition: all .4s ease-in-out;
-    -ms-transition: all .4s ease-in-out;
-    -moz-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
-		 -moz-transform: scaleX(-1);
-        -o-transform: scaleX(-1);
-        -webkit-transform: scaleX(-1);
-        transform: scaleX(-1);
-        filter: FlipH;
-        -ms-filter: "FlipH";
-	
-	}
-
-	
-	.background_img{
-		 background: url(img/rockwall2.png) no-repeat center center;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-	}
-	.negitive-top{
-		margin-top: 0px;
-	}
-	
-	.full-width{
-		display: block;
-		width: 100%;
-	}
-	
-	.uber_top{
-		position: absolute;
-		z-index:45;
-	}
-	
-	</style>
 </head>
 
 
 <body class="background_img">
-      
-       <nav class="background_c_n black_fade">
-       <div class="container">
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">VNA</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-		  <li><a href="#" data-activates="slide-out" class="button-collapse uber_top"><i class="material-icons">menu</i></a></li>
-        <li><a href="index.html">Where am I?</a></li>
-        <li><a href="tank.html">Create your tank</a></li>
-        <li><a href="what_is_a_nano_tank.html">What is a nano tank?</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li><a href="index.html">Where am I?</a></li>
-        <li><a href="tank.html">Create your tank</a></li>
-        <li><a href="what_is_a_nano_tank.html">What is a nano tank?</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-        
-    </div>
 
-      
-		   </div>
- 
-  </nav>
-     
-     <div class="full-width">
-     <a href="#" data-activates="slide-out" class="button-collapse uber_top white-text waves-effect waves-light btn background_c_n black_fade"><i class="material-icons small white-text">mode_edit</i>Edit Tank</a>
-	</div>
-     
-      
-      		    
-      <div id="slide-out" class="side-nav">
-      <div class="row">
-    <form class="col s12">
-      <div class="row">
-      <div class="input-field col s12">
-    <select name="background">
-      <option value="" disabled selected>Choose your option</option>
-      <option value="1">Water Sprite</option>
-      <option value="2">Java Fern</option>
+	<nav class="background_c_n black_fade">
+		<div class="container">
+			<button type="button" name="feesh" value="Make Fish">Make Fish</button>
+			<div class="nav-wrapper">
+				<a href="#!" class="brand-logo">VNA</a>
+				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="#" data-activates="slide-out" class="button-collapse uber_top"><i
+								class="material-icons">menu</i></a></li>
+					<li><a href="index.html">Where am I?</a></li>
+					<li><a href="tank.html">Create your tank</a></li>
+					<li><a href="what_is_a_nano_tank.html">What is a nano tank?</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+				<ul class="side-nav" id="mobile-demo">
+					<li><a href="index.html">Where am I?</a></li>
+					<li><a href="tank.html">Create your tank</a></li>
+					<li><a href="what_is_a_nano_tank.html">What is a nano tank?</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
 
-    </select>
-    <label>Select Background</label>
-  </div>
-        <div class="input-field col s12">
-    <select name="middleground">
-      <option value="" disabled selected>Choose your option</option>
-      <option value="1">Rock Formation</option>
-      <option value="2">Drift Wood</option>
+			</div>
 
-    </select>
-    <label>Select Middle Ground</label>
-  </div>
-  <div class="input-field col s12">
-    <select name="foreground">
-      <option value="" disabled selected>Choose your option</option>
-      <option value="1">Wisteria</option>
-      <option value="2">Cryptocoryne</option>
 
-    </select>
-    <label>Select Foreground</label>
-  </div>
-  <div class="input-field col s12">
-    <select name="gravel">
-      <option value="" disabled selected>Choose your option</option>
-      <option value="1">Gray Gravel</option>
-      <option value="2">Sandy Gravel</option>
-
-    </select>
-    <label>Select Gravel</label>
-  </div>
 		</div>
-    </form>
-  </div>
-    <a  id="btn1" class="waves-effect waves-light btn">Create Tank</a>
+
+	</nav>
+
+	<div class="full-width">
+		<a href="#" data-activates="slide-out"
+			class="button-collapse uber_top white-text waves-effect waves-light btn background_c_n black_fade"><i
+				class="material-icons small white-text">mode_edit</i>Edit Tank</a>
+	</div>
+
+
+
+	<div id="slide-out" class="side-nav">
+		<div class="row">
+			<form class="col s12">
+				<div class="row">
+					<div class="input-field col s12">
+						<select name="background">
+							<option value="" disabled selected>Choose your option</option>
+							<option value="1">Water Sprite</option>
+							<option value="2">Java Fern</option>
+
+						</select>
+						<label>Select Background</label>
+					</div>
+					<div class="input-field col s12">
+						<select name="middleground">
+							<option value="" disabled selected>Choose your option</option>
+							<option value="1">Rock Formation</option>
+							<option value="2">Drift Wood</option>
+
+						</select>
+						<label>Select Middle Ground</label>
+					</div>
+					<div class="input-field col s12">
+						<select name="foreground">
+							<option value="" disabled selected>Choose your option</option>
+							<option value="1">Wisteria</option>
+							<option value="2">Cryptocoryne</option>
+
+						</select>
+						<label>Select Foreground</label>
+					</div>
+					<div class="input-field col s12">
+						<select name="gravel">
+							<option value="" disabled selected>Choose your option</option>
+							<option value="1">Gray Gravel</option>
+							<option value="2">Sandy Gravel</option>
+
+						</select>
+						<label>Select Gravel</label>
+					</div>
+				</div>
+			</form>
+		</div>
+		<a id="btn1" class="waves-effect waves-light btn">Create Tank</a>
 
 	</div>
 
 
-       
-        
 
 
-<div id="tank" class="col s12 card large card-content background_c_n negitive-top full-width">
-<div class="back_wall">
- <img class="responsive-img" src="img/rockwall2.png" width="2082" height="550" alt=""/>
-	 </div>
-	<div class="gravel">
-<img class="responsive-img" src="img/aquaruim-things.png" width="2082" height="550" alt=""/>  
-</div>
-	<div class="veryback">
-   <img class="responsive-img" src="img/water_sprite.svg" alt="water sprite"/>
-	
+
+
+	<div id="tank" class="col s12 card large card-content background_c_n negitive-top full-width">
+		<div class="back_wall">
+			<img class="responsive-img" src="img/rockwall2.png" width="2082" height="550" alt="" />
+		</div>
+		<div class="gravel">
+			<img class="responsive-img" src="img/aquaruim-things.png" width="2082" height="550" alt="" />
+		</div>
+		<div class="veryback">
+			<img class="responsive-img" src="img/water_sprite.svg" alt="water sprite" />
+
+		</div>
+		<!--<div class="fish z_4">
+			<img class="angle betta_fish" src="img/vector_fighting_fish_by_stu_artgraphics-d533k02.png" alt="" height="479"
+				width="511">
+		</div>-->
+		<div class="middleground">
+			<img class="responsive-img" src="img/rock_1.svg" alt="" />
+		</div>
+
+		<div class="foreground responsive-img">
+			<img class="responsive-img" src="img/wisteria.svg" onerror="this.src='img/wisteria.png'; this.onerror=null;"
+				width="2000" height="550" alt="" />
+		</div>
+
 	</div>
-	<div class="fish z_4">
-	<img class="testing" src="img/vector_fighting_fish_by_stu_artgraphics-d533k02.png" alt="" height="100" width="100">
-		<img class="testing display_n" src="img/vector_hor_fighting_fish_by_stu_artgraphics-d533k02.png" alt="" height="100" width="100">
-	</div>
-	<div class="middleground">
-	<img class="responsive-img" src="img/rock_1.svg" alt=""/> 
-	</div>
-	
-	<div class="foreground responsive-img">
-    <img class="responsive-img" src="img/wisteria.svg" onerror="this.src='img/wisteria.png'; this.onerror=null;" width="2000" height="550" alt=""/> 
-    </div>
 
-</div>
 
-	
-	
-<!--<button>Start Animation</button>
+
+	<!--<button>Start Animation</button>
 
 <div style="width:50px;height:50px;position:absolute;left:300px; background-color:red;"></div>-->
-<script type="text/javascript" rel="preload" src="my_code/my_jscript.js"></script>
+	<script type="text/javascript" rel="preload" src="my_code/my_jscript.js"></script>
 </body>
+
 </html>

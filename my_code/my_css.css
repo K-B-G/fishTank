@@ -215,3 +215,125 @@
 .neg_top_margin{
 	margin-top: -7px;
 }
+
+#tank {
+  box-shadow: none;
+  /*display: block;
+width: 100%;*/
+  margin-bottom: 0;
+}
+
+.veryback {
+  display: block;
+  position: absolute;
+  width: 100%;
+
+  z-index: 2;
+  /*background-color: lightpink;	*/
+}
+
+.middleground {
+  display: block;
+  position: absolute;
+  width: 100%;
+
+  z-index: 4;
+  /*background-color: aquamarine;
+opacity: 0.3;*/
+}
+
+.foreground {
+  display: block;
+  position: absolute;
+
+  width: 100%;
+
+  z-index: 6;
+  /*background-color: aquamarine;
+opacity: 0.3;*/
+}
+
+.gravel {
+  display: block;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+.back_wall {
+  display: block;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+}
+
+.fish {
+  display: block;
+  position: absolute;
+  width: 30%;
+  transform: translateX(0px) translateY(0px);
+}
+
+.z_2 {
+  z-index: 3;
+}
+
+.z_4 {
+  z-index: 5;
+}
+
+.background_img {
+  background: url(img/rockwall2.png) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.negitive-top {
+  margin-top: 0px;
+}
+
+.full-width {
+  display: block;
+  width: 100%;
+}
+
+.uber_top {
+  position: absolute;
+  z-index: 45;
+}
+/*all classes with "y_180_rotate*" will have the fish facing left*/
+
+.betta_fish{
+  width: 25%;
+  height: auto;
+}
+.angle{}
+
+.y_180_rotate {
+  rotate: y 180deg;
+}
+.y_180_rotate_down {
+rotate: y 180deg;
+transform: rotate(15deg);
+transform-origin: center;
+transition: all .4s ease-in-out;
+}
+.y_180_rotate_up {
+rotate: y 180deg;
+transform: rotate(-15deg);
+transform-origin: center;
+transition: all .4s ease-in-out;
+}
+
+.downward {
+transform: rotate(15deg);
+transform-origin: center;
+transition: all .4s ease-in-out;
+}
+.upward{
+transform: rotate(-15deg);
+transform-origin: center;
+transition: all .4s ease-in-out;
+}
