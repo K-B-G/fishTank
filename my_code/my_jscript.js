@@ -62,8 +62,10 @@ let fishSwim = function () {
 	let makeNewPosition = function () {
 		let fishImgHght = document.querySelector('.angle').offsetHeight;
 		let fishImgWdth = document.querySelector('.angle').offsetWidth;
-		let tankHght = document.querySelector('#tank').offsetHeight - (fishImgHght + 200);
-		let tankWdth = document.querySelector('#tank').offsetWidth - (fishImgWdth + 200);
+		let dividedTankHght = document.querySelector('#tank').offsetHeight;
+		let dividedTankWdth = document.querySelector('#tank').offsetWidth; 
+		let tankHght = document.querySelector('#tank').offsetHeight - (fishImgHght + ( dividedTankHght/5));
+		let tankWdth = document.querySelector('#tank').offsetWidth - (fishImgWdth + (dividedTankWdth/10));
 		let nuTop = Math.floor(Math.random() * tankHght);
 		let nuLeft = Math.floor(Math.random() * tankWdth);
 		let swimSpeed = Math.floor(Math.random() * 5000 + 3000);
@@ -131,8 +133,8 @@ let fishSwim = function () {
 }
 function changeBackground() {
 	var background_v = $('select[name="background"]').val();
-	var backgimg_1 = '<img class="responsive-img" src="img/water_sprite.svg" onerror="this.src= &quotimg/water_sprite.png &quot; this.onerror=null;" width="2000" height="550" alt="water sprite"/>';
-	var backgimg_2 = '<img class="responsive-img" src="img/java_fern.svg" onerror="this.src= &quotimg/java_fern.png &quot; this.onerror=null;" width="2000" height="550" alt="java_fern"/>';
+	var backgimg_1 = '<img class="no_margin img_respn absolute_bottom_left" src="img/water_sprite.svg" onerror="this.src= &quotimg/water_sprite.png &quot; this.onerror=null;" width="2000" height="550" alt="water sprite"/>';
+	var backgimg_2 = '<img class="no_margin img_respn absolute_bottom_left" src="img/java_fern.svg" onerror="this.src= &quotimg/java_fern.png &quot; this.onerror=null;" width="2000" height="550" alt="java_fern"/>';
 
 	if ($('.veryback:has(img)').length > 0) {
 		if (background_v == 1) {
@@ -157,8 +159,8 @@ function changeBackground() {
 
 function changeMiddle() {
 	var middleground_v = $('select[name="middleground"]').val();
-	var middlegimg_1 = '<img class="responsive-img" src="img/rock_1.svg" onerror="this.src= &quotimg/rock_1.png &quot; this.onerror=null;" width="2000" height="550" alt="Its a rock"/>';
-	var middlegimg_2 = '<img class="responsive-img" src="img/wood_1.svg" onerror="this.src= &quotimg/wood_1.png &quot; this.onerror=null;" width="2000" height="550" alt="java_fern"/>';
+	var middlegimg_1 = '<img class="no_margin img_respn absolute_bottom_left" src="img/rock_1.svg" onerror="this.src= &quotimg/rock_1.png &quot; this.onerror=null;" width="2000" height="550" alt="Its a rock"/>';
+	var middlegimg_2 = '<img class="no_margin img_respn absolute_bottom_left" src="img/wood_1.svg" onerror="this.src= &quotimg/wood_1.png &quot; this.onerror=null;" width="2000" height="550" alt="java_fern"/>';
 
 	if ($('.middleground:has(img)').length > 0) {
 		if (middleground_v == 1) {
@@ -183,8 +185,8 @@ function changeMiddle() {
 function changeFore() {
 	//<img class="responsive-img" src="img/wisteria.svg" onerror="this.src='img/wisteria.png'; this.onerror=null;" width="2000" height="550" alt=""/>
 	var foreground_v = $('select[name="foreground"]').val();
-	var foregimg_1 = '<img class="responsive-img" src="img/wisteria.svg" onerror="this.src= &quotimg/wisteria.png &quot; this.onerror=null;" width="2000" height="550" alt="wisteria plant"/>';
-	var foregimg_2 = '<img class="responsive-img" src="img/crypto.svg" onerror="this.src= &quotimg/crypto.png &quot; this.onerror=null;" width="2000" height="550" alt="one of the smaller crypto things"/>';
+	var foregimg_1 = '<img class="no_margin img_respn absolute_bottom_left" src="img/wisteria.svg" onerror="this.src= &quotimg/wisteria.png &quot; this.onerror=null;" width="2000" height="550" alt="wisteria plant"/>';
+	var foregimg_2 = '<img class="no_margin img_respn absolute_bottom_left" src="img/crypto.svg" onerror="this.src= &quotimg/crypto.png &quot; this.onerror=null;" width="2000" height="550" alt="one of the smaller crypto things"/>';
 
 	if ($('.foreground:has(img)').length > 0) {
 		if (foreground_v == 1) {
@@ -210,8 +212,8 @@ function changeFore() {
 function changeGravel() {
 	//<img class="responsive-img" src="img/wisteria.svg" onerror="this.src='img/wisteria.png'; this.onerror=null;" width="2000" height="550" alt=""/>
 	var foreground_v = $('select[name="gravel"]').val();
-	var foregimg_1 = '<img class="responsive-img" src="img/aquaruim-things.png" width="2000" height="550" alt="gray gravel"/>';
-	var foregimg_2 = '<img class="responsive-img" src="img/gravel_sand.png" width="2000" height="550" alt="sandy gravel"/>';
+	var foregimg_1 = '<img class="no_margin img_respn absolute_bottom_left" src="img/aquaruim-things.png" width="2000" height="550" alt="gray gravel"/>';
+	var foregimg_2 = '<img class="no_margin img_respn absolute_bottom_left" src="img/gravel_sand.png" width="2000" height="550" alt="sandy gravel"/>';
 
 	if ($('.gravel:has(img)').length > 0) {
 		if (foreground_v == 1) {

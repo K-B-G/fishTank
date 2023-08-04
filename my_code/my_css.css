@@ -457,12 +457,57 @@ opacity: 0.3;*/
   left: 0;
 }
 
-.fish {
+/****TANK CSS LOGIC FOR DIFFERENT ORIENTATIONS******/
+@media all and (orientation: landscape) {
+
+  .fish {
+    display: block;
+    position: absolute;
+    width: 60em;
+    transform: translateX(0px) translateY(0px);
+  }
+
+
+}
+@media all and (orientation: portrait) {
+
+  .fish {
   display: block;
   position: absolute;
-  width: 30%;
+  width: 30em;
   transform: translateX(0px) translateY(0px);
+  }
+  .veryback{
+  width: 250%;
+  }
+  .veryback img{
+    transform: translateY(17%) translateX(-2%);
+  }
+  
+  .middleground img{
+    display: block;
+    position: fixed;
+    max-width: 100%;
+    z-index: 4;
+    transform: scale(1.7) rotate(-110deg);
+    bottom: 0;
+    margin-bottom: 10%;
+    }
+
+  
+  .foreground {
+    width: 200%;
+  }
+  
+  .foreground img{
+    transform: translateY(1%) translateX(-2%);
+  }
 }
+
+
+
+}
+/*****END OF FISH LOGIC******/
 
 .z_2 {
   z-index: 3;
