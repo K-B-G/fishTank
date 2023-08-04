@@ -6,10 +6,12 @@
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 	<!--Import materialize.css-->
 	<link type="text/css" rel="stylesheet" href="materialize/css/materialize.css" media="screen,projection"/>
+	<link type="text/css" rel="stylesheet" href="my_code/reset.css" media="screen,projection"/>
+	<link type="text/css" rel="stylesheet" href="my_code/caterpillarStyles.css" media="screen,projection"/>
+	<link type="text/css" rel="stylesheet" href="my_code/my_css.css"  media="screen,projection"/>	
 	<script type="text/javascript" rel="preload" src="node_modules/animejs/lib/anime.min.js"></script>
 	<!--Let browser know website is optimized for mobile-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link type="text/css" rel="stylesheet" href="my_code/my_css.css"  media="screen,projection"/>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 	<script type="text/javascript" src="lib/anime.min.js"></script>
@@ -19,33 +21,22 @@
 
 <body class="background_img">
 
-	<nav class="background_c_n black_fade">
-		<div class="container">
-			<button type="button" name="feesh" value="Make Fish">Make Fish</button>
-			<div class="nav-wrapper">
-				<a href="#!" class="brand-logo">VNA</a>
-				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-				<ul class="right hide-on-med-and-down">
-					<li><a href="#" data-activates="slide-out" class="button-collapse uber_top"><i
-								class="material-icons">menu</i></a></li>
-					<li><a href="index.html">Where am I?</a></li>
-					<li><a href="tank.html">Create your tank</a></li>
-					<li><a href="what_is_a_nano_tank.html">What is a nano tank?</a></li>
-					<li><a href="contact.html">Contact</a></li>
-				</ul>
-				<ul class="side-nav" id="mobile-demo">
-					<li><a href="index.html">Where am I?</a></li>
-					<li><a href="tank.html">Create your tank</a></li>
-					<li><a href="what_is_a_nano_tank.html">What is a nano tank?</a></li>
-					<li><a href="contact.html">Contact</a></li>
-				</ul>
-
-			</div>
-
-
+		
+	<nav id="nav">
+		<div class="block_2_full"
+<div id="logo">
+	<h1 class="no_margin">VNT</h1>
+	</div>
+	<div class="block_2_full">
+		<ul>
+			<li><button type="button" name="feesh" value="Make Fish">Make Fish</button></li>
+			</li>
+		</ul>	
 		</div>
+	
 
 	</nav>
+	
 
 	<div class="full-width">
 		<a href="#" data-activates="slide-out"
@@ -109,13 +100,13 @@
 
 	<div id="tank" class="col s12 card large card-content background_c_n negitive-top full-width">
 		<div class="back_wall">
-			<img class="responsive-img" src="img/rockwall2.png" width="2082" height="550" alt="" />
+			<img class="no_margin full100_respn" src="img/rockwall2.png" width="2082" height="550" alt="" />
 		</div>
 		<div class="gravel">
-			<img class="responsive-img" src="img/aquaruim-things.png" width="2082" height="550" alt="" />
+			<img class="no_margin img_respn absolute_bottom_left" src="img/aquaruim-things.png" width="2082" height="550" alt="" />
 		</div>
 		<div class="veryback">
-			<img class="responsive-img" src="img/water_sprite.svg" alt="water sprite" />
+			<img class="no_margin img_respn absolute_bottom_left" src="img/water_sprite.svg" alt="water sprite" />
 
 		</div>
 		<!--<div class="fish z_4">
@@ -123,11 +114,11 @@
 				width="511">
 		</div>-->
 		<div class="middleground">
-			<img class="responsive-img" src="img/rock_1.svg" alt="" />
+			<img class="no_margin img_respn absolute_bottom_left" src="img/rock_1.svg" alt="" />
 		</div>
 
-		<div class="foreground responsive-img">
-			<img class="responsive-img" src="img/wisteria.svg" onerror="this.src='img/wisteria.png'; this.onerror=null;"
+		<div class="foreground">
+			<img class="no_margin img_respn absolute_bottom_left" src="img/wisteria.svg" onerror="this.src='img/wisteria.png'; this.onerror=null;"
 				width="2000" height="550" alt="" />
 		</div>
 
