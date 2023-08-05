@@ -463,7 +463,7 @@ opacity: 0.3;*/
   .fish {
     display: block;
     position: absolute;
-    width: 60em;
+    width: 30%;
     transform: translateX(0px) translateY(0px);
   }
 
@@ -474,7 +474,7 @@ opacity: 0.3;*/
   .fish {
   display: block;
   position: absolute;
-  width: 30em;
+  width: 72%;
   transform: translateX(0px) translateY(0px);
   }
   .veryback{
@@ -493,6 +493,9 @@ opacity: 0.3;*/
     bottom: 0;
     margin-bottom: 10%;
     }
+  .driftwood_adj {
+    margin-bottom: 5% !important; /*heresy*/
+  }
 
   
   .foreground {
@@ -502,11 +505,14 @@ opacity: 0.3;*/
   .foreground img{
     transform: translateY(1%) translateX(-2%);
   }
+  .crypto_adj {
+    transform: translateY(4%) translateX(0) !important; /*heresy*/
+  }
+  .java_adj{
+    transform: translateY(14%) translateX(-12%) !important; /*heresy*/
+  }
 }
 
-
-
-}
 /*****END OF FISH LOGIC******/
 
 .z_2 {
