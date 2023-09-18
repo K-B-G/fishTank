@@ -159,9 +159,8 @@ function changeBackground() {
 
 function changeMiddle() {
 	var middleground_v = $('select[name="middleground"]').val();
-	var middlegimg_1 = '<img class="no_margin img_respn absolute_bottom_left" src="img/rock_1.svg" onerror="this.src= &quotimg/rock_1.png &quot; this.onerror=null;" width="2000" height="550" alt="Its a rock"/>';
-	var middlegimg_2 = '<img class="driftwood_adj no_margin img_respn absolute_bottom_left" src="img/wood_1.svg" onerror="this.src= &quotimg/wood_1.png &quot; this.onerror=null;" width="2000" height="550" alt="java_fern"/>';
-
+	var middlegimg_1 = '<img class="no_margin img_respn absolute_bottom_left hide_p" src="img/rock_1.svg" onerror="this.src= &quotimg/rock_1.png &quot; this.onerror=null;" width="2000" height="550" alt="Its a rock"/> <img class="no_margin img_respn absolute_bottom_left hide_l" src="img/rock_1_side.svg" onerror="this.src= &quotimg/rock_1.png &quot; this.onerror=null;" width="2000" height="550" alt="Its a rock"/>';
+	var middlegimg_2 = '<img class="driftwood_adj no_margin img_respn absolute_bottom_left hide_p" src="img/wood_1.svg" onerror="this.src= &quotimg/wood_1.png &quot; this.onerror=null;" width="2000" height="550" alt="drift wood"/> <img class="driftwood_adj no_margin img_respn absolute_bottom_left hide_l" src="img/wood_1.svg" onerror="this.src= &quotimg/wood_1_side.png &quot; this.onerror=null;" width="2000" height="550" alt="drift wood"/>';
 	if ($('.middleground:has(img)').length > 0) {
 		if (middleground_v == 1) {
 			$('.middleground > img').replaceWith(middlegimg_1);
@@ -212,7 +211,7 @@ function changeFore() {
 function changeGravel() {
 	//<img class="responsive-img" src="img/wisteria.svg" onerror="this.src='img/wisteria.png'; this.onerror=null;" width="2000" height="550" alt=""/>
 	var foreground_v = $('select[name="gravel"]').val();
-	var foregimg_1 = '<img class="no_margin img_respn absolute_bottom_left" src="img/aquaruim-things.png" width="2000" height="550" alt="gray gravel"/>';
+	var foregimg_1 = '<img class="no_margin img_respn absolute_bottom_left" src="img/gray_gravel.png" width="2000" height="550" alt="gray gravel"/>';
 	var foregimg_2 = '<img class="no_margin img_respn absolute_bottom_left" src="img/gravel_sand.png" width="2000" height="550" alt="sandy gravel"/>';
 
 	if ($('.gravel:has(img)').length > 0) {
