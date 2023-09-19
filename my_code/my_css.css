@@ -4,9 +4,6 @@
 /*******NAV LOGIC*********/
 @media all and (orientation: landscape) {
 
-  html {
-    font-size: 10px;
-  }
   #nav {
     box-sizing: border-box;
     display: flex;
@@ -96,7 +93,9 @@
 nav {
     width: 100%;
 }
+form{
 
+}
 }
 
 @media all and (orientation: portrait) { 
