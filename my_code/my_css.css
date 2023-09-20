@@ -6,28 +6,29 @@
 
   #nav {
     box-sizing: border-box;
-    display: flex;
+    display: inline-block;
     width: inherit;
     height: inherit;
     /*background: linear-gradient(to bottom, blue , darkblue);*/   
     font-family: Arial, Helvetica, Helvetica neue, sans-serif;
     font-weight: 700;
     text-transform: capitalize;
-    font-size: 1rem;
-    margin-top: rem;
-    margin-left: 0rem;
-    margin-right: 0rem;
-    margin-bottom: 0rem;
+    font-size: 1em;
+    margin-top: 0em;
+    margin-left: 0em;
+    margin-right: 0em;
+    margin-bottom: 0em;
     background-color: #000000;
-    padding-top: 1rem;
 }
 #logo {
+
+    height: inherit;
     box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 0rem;
-    margin-left: 0rem;
+    display: inline-block;
+    margin-bottom: 0em;
+    margin-top: 1em;
+    vertical-align: text-top;
+    text-align: left;
 }
 #logo h1 {
   vertical-align: text-top;
@@ -35,13 +36,13 @@
 #nav ul {
     display: inline-block;
     vertical-align: text-top;
-    margin-bottom: 0rem;
+    margin-bottom: 0em;
 }
 #nav li {
     box-sizing: border-box;
     list-style: none;
     display: inline-block;
-    margin-bottom: 0rem;
+    margin-bottom: 0em;
     vertical-align: text-bottom;
 }
 #nav li a {
@@ -49,11 +50,11 @@
     display: inline-block;
     color: #ffffff;
     text-decoration: none;
-    padding-top: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-bottom: 1rem;
-    font-size: 1rem;
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    font-size: 1em;
 }
 #nav a:hover {
     color: #000000;
@@ -71,8 +72,8 @@
 }
 
 #nav .sub_nav_list >ul{
-   width: 0rem;
-   height: 0rem;
+   width: 0em;
+   height: 0em;
    overflow: hidden; 
 }
 #nav .sub_nav_list a:hover{
@@ -81,21 +82,14 @@
     height: auto;
 }
 #nav button {
-  display: flex;
   width: inherit;
-  height: 2rem;
-  align-items: center;
-  justify-content: center;
-  margin: 0rem;
-
+  text-wrap: balance;
 }
 
 nav {
     width: 100%;
 }
-form{
 
-}
 }
 
 @media all and (orientation: portrait) { 
@@ -108,32 +102,32 @@ form{
     font-family: Arial, Helvetica, Helvetica neue, sans-serif;
     font-weight: 700;
     text-transform: capitalize;
-    font-size: 1rem;
-    margin-top: 0rem;
-    margin-left: 0rem;
-    margin-right: 0rem;
-    margin-bottom: 0rem;
+    font-size: 1em;
+    margin-top: 0em;
+    margin-left: 0em;
+    margin-right: 0em;
+    margin-bottom: 0em;
     background-color: #000000;
 }
 #logo {
     height: inherit;
     box-sizing: border-box;
     display: inline-block;
-    margin-bottom: 0rem;
-    margin-top: 1rem;
+    margin-bottom: 0em;
+    margin-top: 1em;
     vertical-align: text-top;
     text-align: left;
 }
 #nav ul {
     display: inline-block;
     vertical-align: text-top;
-    margin-bottom: 0rem;
+    margin-bottom: 0em;
 }
 #nav li {
     box-sizing: border-box;
     list-style: none;
     display: inline-block;
-    margin-bottom: 0rem;
+    margin-bottom: 0em;
     vertical-align: text-bottom;
 }
 #nav li a {
@@ -141,11 +135,11 @@ form{
     display: inline-block;
     color: #ffffff;
     text-decoration: none;
-    padding-top: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-bottom: 1rem;
-    font-size: 1rem;
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    font-size: 1em;
 }
 #nav a:hover {
     color: #000000;
