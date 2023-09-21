@@ -1,0 +1,1781 @@
+/************************/
+/*** GLOBAL DEFUALTS ***/
+/**********************/
+html {
+    box-sizing: border-box;
+    /*this doesn't do anything, but just want to let you know the whole
+		system uses border-box for ease of use; 
+		compared to content-box.*/
+        font-size: 10px;
+}
+/*body {
+    box-sizing: border-box;
+    background-color: #ffffff;
+    strictly for testing
+    width: 100%;
+    margin-top: 0em;
+} 
+*/
+/* LAYOUT Settings */
+/* This is were most of the font stack should sit.
+	Then it gets inherited in the document.*/
+
+body {
+    box-sizing: border-box;
+    width: 100%;
+    height: inherit;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    background-color: #ffffff;
+    font-family: "Courier New", Courier, monospace, monospace;
+    text-align: center;
+    /*Look into if setting monospace default font for linux like FreeMono and Nimbus Mono L*/
+    color: #000000;
+    /*sets global font color*/
+    /*background-color: #ffffff;*/
+    /*vertical-align:inherit;*/
+    z-index: 0;
+}
+div{
+    box-sizing: border-box;
+}
+.demo_wrapper_1 {
+    font-family: serif;
+    color: #1D1CAA;
+}
+.demo_wrapper_1 h1 {
+    font-family: Verdana;
+    color: #6207B9;
+    background-color: #FFF45F;
+    font-size: 6em/1em;
+    
+}
+/*
+main {
+    font-family: inherit;
+}*/
+/****************************************************************************************
+	This is what controls the "magnification" of everything.
+	NOTE: when adjustsing em sizing, use the decimal system; i.e. times the number by 10. 
+*****************************************************************************************/
+@media all and (orientation: landscape) and (aspect-ratio: 4/3), all and (orientation:landscape) and (width:320px) and (height:240px), all and (orientation: portrait){
+    body {
+        font-size: 10px !important;
+    }
+    .row_full {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        height: inherit;
+        margin-left: 0em;
+        margin-top: 0em;
+        margin-right: 0em;
+        margin-bottom: 5em;
+    }
+    .row {
+        display: block;
+        width: 100%;
+        height: inherit;
+        margin-bottom: 3em;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+    }
+    .row_half {
+        display: block;
+        width: 50%;
+        height: inherit;
+        margin-left: 2em;
+        margin-bottom: 5em;
+        box-sizing: border-box;
+    }
+    .block_center.block_1.block_2.block_3.block_4.block_5.block_6.block_7.block_8.block_9.block_10.block_11.block_12.block_66.block_33.block_1_full.block_2_full {
+        box-sizing: inherit;
+        display: block;
+        vertical-align: top;
+        height: inherit;
+        width: 100%;
+        margin-bottom: 1.6em;
+        margin-left: 0em;
+        margin-right: 0em;
+    }
+    /* This is the one that affects only portrait mode. Acts normal in landscape.*/
+    
+    .block_2column {
+        box-sizing: inherit;
+        display: table-cell; /*Why did I make it a tabel cell? Answer: cause it puts psudeo table elemnts in place that make it "just work" also stops the issue with it not working as an inline block.*/
+        width: 50%;
+        height: inherit;
+        margin-left: 0em;
+        margin-top: 0em;
+        margin-right: 0em;
+        margin-bottom: 1.6em;
+    
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        box-sizing: border-box;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    /* This is mostly to fix alternating heaind titles and word boxes
+        used in landscape mode. */
+    .float_right_alt {
+        float: none;
+    }
+    #second_nav {
+        height: inherit;
+    }
+    .logo_fix {
+        margin-top: 1em;
+    }
+    .margin_right_l {
+        margin-right: 0em;
+    }
+    input {
+        box-sizing: border-box;
+        height: 2em;
+        width: 100%;
+    }
+    .position_fixed_p{
+        position: fixed;
+    }
+
+    #logo {
+        display: inline-block;
+        height: inherit;
+        margin-top: 1em;
+        margin-bottom: 0em;
+        vertical-align: text-top;
+        box-sizing: border-box;
+        text-align: left;
+    }
+    #logo img {
+        z-index: 2;
+    }
+    .padding_left_big_l {
+        padding-left: 5em;
+    }
+    .block_900 {
+        box-sizing: inherit;
+        display: inline-block;
+        width: 90em;
+        height: inherit;
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+    .block_233 {
+        box-sizing: inherit;
+        width: 16.9em;
+        display: inline-block;
+        height: inherit;
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+    .font_purple_l {
+        color: #6207B9;
+    }
+    /*NOTE: Float_right_l is for when you want to alternate heading and wordboxes
+            in landscape mode. It will be turned off in portrait mode. */
+    .float_right_l {
+    float: right;
+    }
+/*** NAV Settings ***/
+
+#second_nav {
+    background-color: #a4c2dc;
+}
+#nav {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    height: inherit;
+    /*background: linear-gradient(to bottom, blue , darkblue);*/   
+    font-family: Arial, Helvetica, Helvetica neue, sans-serif;
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: 1em;
+    margin-top: 0em;
+    margin-left: 0em;
+    margin-right: 0em;
+    margin-bottom: 5em;
+    background-color: #000000;
+}
+#logo {
+    height: inherit;
+    box-sizing: border-box;
+    display: inline-block;
+    margin-bottom: 0em;
+    margin-top: 1em;
+    vertical-align: text-top;
+    text-align: left;
+}
+#nav ul {
+    display: inline-block;
+    vertical-align: text-top;
+    margin-bottom: 0em;
+}
+#nav li {
+    box-sizing: border-box;
+    list-style: none;
+    display: inline-block;
+    margin-bottom: 0em;
+    vertical-align: text-bottom;
+}
+#nav li a {
+    box-sizing: border-box;
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    font-size: 1em;
+}
+#nav a:hover {
+    color: #000000;
+    background-color: #ffffff;
+}
+#nav a:active {
+    color: #000000;
+    background-color: #D0D0D0;
+}
+#nav ul li a {
+    display: inline-block;
+    vertical-align: text-bottom;
+    overflow: hidden;
+}
+}
+
+@media all and (max-width: 299px) and (orientation: landscape) {
+    body {
+        font-size: 0.8px;
+    }
+}
+@media all and (min-width: 300px) and (orientation: landscape) {
+    body {
+        font-size: 1.4px;
+    }
+}
+@media all and (min-width: 400px) and (orientation: landscape) {
+    body {
+        font-size: 2.5px;
+    }
+}
+@media all and (min-width: 480px) and (orientation: landscape) {
+    body {
+        font-size: 3px;
+    }
+}
+@media all and (min-width: 550px) and (orientation: landscape) {
+    body {
+        font-size: 3.6px;
+    }
+}
+@media all and (min-width: 600px) and (orientation: landscape) {
+    body {
+        font-size: 4.2px;
+    }
+}
+@media all and (min-width: 700px) and (orientation: landscape) {
+    body {
+        font-size: 4.5px;
+    }
+}
+@media all and (min-width: 800px) and (orientation: landscape) {
+    body {
+        font-size: 5.2px;
+    }
+}
+@media all and (min-width: 900px) and (orientation: landscape) {
+    body {
+        font-size: 6px;
+    }
+}
+@media all and (min-width: 1000px) and (orientation: landscape) {
+    body {
+        font-size: 7.3px;
+    }
+}
+@media all and (min-width: 1280px) and (orientation: landscape) {
+    body {
+        font-size: 8px;
+    }
+}
+@media all and (min-width: 1366px) and (orientation: landscape) {
+    body {
+        font-size: 9px;
+    }
+}
+@media all and (min-width: 1600px) and (orientation: landscape) {
+    body {
+        font-size: 10.3px;
+    }
+}
+@media all and (min-width: 1889px) and (orientation: landscape) {
+    body {
+        font-size: 10.8px;
+    }
+}
+@media all and (min-width: 2000px) and (orientation: landscape) {
+    body {
+        font-size: 7px;
+    }
+}
+@media all and (min-width: 2560px) and (orientation: landscape) {
+    body {
+        font-size: 11px;
+    }
+}
+@media all and (orientation: landscape) {
+    /*body{ 
+		font-size: 10px;
+	} This has to be off for the landscape scaling to work, 
+	but if this is on it fixes the zoom out on form input selection.
+	Front end is annoying.*/
+    
+    /***********************/
+    /*****Row Settings*****/
+    /*********************/
+    /*This class sets the "page-size" or "bounds" for the blocks
+		to be put into. If a row of blocks would exceed the size
+		set by the row, the block simply breaks and sits below centered.*/
+    
+    .row {
+        box-sizing: border-box;
+        display: block;
+        width: 136.6em;
+        height: inherit;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 5em;
+    }
+    /*This class makes an element fit the entire width
+		of the screen. It esstionally represents a
+		"page-bleed"*/
+    
+    .row_full {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        height: inherit;
+        margin-left: 0em;
+        margin-top: 0em;
+        margin-right: 0em;
+        margin-bottom: 5em;
+    }
+    .row_half {
+        display: block;
+        width: 50%;
+        height: inherit;
+        margin-bottom: 5em;
+    }
+
+    /*********************/
+    /***Block Settings***/
+    /*******************/
+    
+    .block_center {
+        display: block;
+        width: 70em;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: inherit;
+    }
+    .block_1 {
+        box-sizing: inherit;
+        vertical-align: top;
+        display: inline-block;
+        width: inherit;
+        margin-bottom: 1.6em;
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+    .block_1_full {
+        box-sizing: inherit;
+        display: block;
+        vertical-align: top;
+        width: 100%;
+        margin-bottom: 1.6em;
+    }
+    .block_2 {
+        display: inline-block;
+        vertical-align: top;
+        width: 63.9em;
+        margin-right: 2em;
+        margin-bottom: 1.6em;
+        margin-left: 2em;
+        box-sizing: inherit;
+    }
+    .block_2_full {
+        display: inline-block;
+        vertical-align: top;
+        width: 68.1em;
+        /* width: 64em; */
+        /*margin-bottom: 1.6em;*/
+        box-sizing: inherit;
+    }
+    .block_3 {
+        box-sizing: inherit;
+        display: inline-block;
+        vertical-align: top;
+        width: 41.1em;
+        margin-right: 2em;
+        margin-bottom: 1.6em;
+        margin-left: 2em;
+    }
+    .block_4 {
+        box-sizing: inherit;
+        display: inline-block;
+        vertical-align: top;
+        width: 29.6em;
+        margin-right: 2em;
+        margin-bottom: 1.6em;
+        margin-left: 2em;
+    }
+    .block_5 {
+        box-sizing: inherit;
+        display: inline-block;
+        vertical-align: top;
+        width: 22.7em;    
+        margin-right: 2em;
+        margin-bottom: 1.6em;
+        margin-left: 2em;
+    }
+    .block_6 {
+        display: inline-block;
+        vertical-align: top;
+        width: 18.2em;
+        /* width: 18.4em; */
+        
+        margin-right: 2em;
+        margin-bottom: 1.6em;
+        margin-left: 2em;
+        box-sizing: inherit;
+    }
+    .block_7 {
+        display: inline-block;
+        vertical-align: top;
+        width: 14.9em;      
+        margin-right: 2em;
+        margin-bottom: 1.6em;
+        margin-left: 2em;
+        box-sizing: inherit;
+    }
+    .block_8 {
+        display: inline-block;
+        vertical-align: top;
+        width: 12.5em;      
+        margin-right: 2em;
+        margin-bottom: 1.6em;
+        margin-left: 2em;
+        box-sizing: inherit;
+    }
+    .block_9 {
+        display: inline-block;
+        vertical-align: top;
+        width: 10.6em;      
+        margin-right: 2em;
+        margin-bottom: 1.6em;
+        margin-left: 2em;
+        box-sizing: inherit;
+    }
+    .block_10 {
+        display: inline-block;
+        vertical-align: top;
+        width: 9.1em;
+        margin-right: 2em;
+        margin-bottom: 1.6em;
+        margin-left: 2em;
+        box-sizing: inherit;
+    }
+    .block_11 {
+        display: inline-block;
+        vertical-align: top;
+        width: 7.8em;
+        margin-right: 2em;
+        margin-bottom: 1.6em;
+        margin-left: 2em;
+        box-sizing: inherit;
+    }
+    .block_12 {
+        display: inline-block;
+        vertical-align: top;
+        width: 6.8em;
+        margin-right: 2em;
+        margin-bottom: 1.6em;
+        margin-left: 2em;
+        box-sizing: inherit;
+    }
+    .block_33 {
+        box-sizing: inherit;
+        display: inline-block;
+        vertical-align: top;
+        width: 42.5em;
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+    .block_66 {
+        box-sizing: inherit;
+        display: inline-block;
+        vertical-align: top;
+        width: 85.4em;
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+    #logo {
+        display: inline-block;
+        height: inherit;
+        margin-top: 1em;
+        margin-bottom: 0em;
+        vertical-align: text-top;
+        box-sizing: border-box;
+        text-align: left;
+    }
+    #logo img {
+        z-index: 2;
+    }
+    .padding_left_big_l {
+        padding-left: 5em;
+    }
+    .block_900 {
+        box-sizing: inherit;
+        display: inline-block;
+        width: 90em;
+        height: inherit;
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+    .block_233 {
+        box-sizing: inherit;
+        width: 16.9em;
+        display: inline-block;
+        height: inherit;
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+    .font_purple_l {
+        color: #6207B9;
+    }
+    /*NOTE: Float_right_l is for when you want to alternate heading and wordboxes
+            in landscape mode. It will be turned off in portrait mode. */
+    .float_right_l {
+    float: right;
+    }
+/*** NAV Settings for LANDSCAPE ***/
+
+#second_nav {
+    background-color: #a4c2dc;
+}
+#nav {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    height: inherit;
+    /*background: linear-gradient(to bottom, blue , darkblue);*/   
+    font-family: Arial, Helvetica, Helvetica neue, sans-serif;
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: 1em;
+    margin-top: 0em;
+    margin-left: 0em;
+    margin-right: 0em;
+    margin-bottom: 5em;
+    background-color: #000000;
+}
+#logo {
+    height: inherit;
+    box-sizing: border-box;
+    display: inline-block;
+    margin-bottom: 0em;
+    margin-top: 1em;
+    vertical-align: text-top;
+    text-align: left;
+}
+#nav ul {
+    display: inline-block;
+    vertical-align: text-top;
+    margin-bottom: 0em;
+}
+#nav li {
+    box-sizing: border-box;
+    list-style: none;
+    display: inline-block;
+    margin-bottom: 0em;
+    vertical-align: text-bottom;
+}
+#nav li a {
+    box-sizing: border-box;
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    font-size: 1em;
+}
+#nav a:hover {
+    color: #000000;
+    background-color: #ffffff;
+}
+#nav a:active {
+    color: #000000;
+    background-color: #D0D0D0;
+}
+#nav ul li a {
+    display: inline-block;
+    vertical-align: text-bottom;
+    overflow: hidden;
+}
+
+.sub-nav-menu ul{
+    width: 0;
+    height: 0;
+    background-color: red;
+    display: inline-block;
+    overflow:hidden;
+    
+}
+}
+/***** Tables, Phones, or Computers in portrait orientation *****/
+
+
+/*** Change highlight colors ***/
+
+::selection {
+    background: #686868;
+    color: #ffffff;
+}
+::-moz-selection {
+    background: #686868;
+    color: #ffffff;
+}
+
+
+/*********************/
+/**Z-INDEX Settings**/
+/*******************/
+/****Note: default position is absolute****/
+.z-index_-4{
+    position: absolute;
+    z-index: -4;
+}
+.z-index_-3{
+    position: absolute;
+    z-index: -3;
+}
+.z-index_-2{
+    position: absolute;
+    z-index: -2;
+}
+.z-index_-1{
+    position: absolute;
+    z-index: -1;
+}
+.z-index_0{
+    position: absolute;
+    z-index: 0;
+}
+.z-index_1{
+    position: absolute;
+    z-index: 1;
+}
+.z-index_2{
+    position: absolute;
+    z-index: 2;
+}
+.z-index_3{
+    position: absolute;
+    z-index: 3;
+}
+.z-index_4{
+    position: absolute;
+    z-index: 4;
+}
+
+/*********************/
+/**POSITION Settings*/
+/*******************/
+/****NOTE: Expect debugging when using position settings 
+            in regards to responsivnes. */
+.position_relative{
+    position: relative;
+}
+.position_fixed{
+    position: fixed;
+}
+.left_5em{
+    left: 5em;
+}
+.right_5em{
+    right: 5em;
+}
+.bottom_1em{
+    bottom: 1em;
+}
+.bottom_2em{
+    bottom: 2em;
+}
+.bottom_3em{
+    bottom: 3em;
+}
+.bottom_4em{
+    bottom: 4em;
+}
+.bottom_5em{
+    bottom: 5em;
+}
+.top_5em{
+    top: 5em;
+}
+.top_10em{
+    top: 10em;
+}
+
+
+/*********************/
+/***IMAGE Settings***/
+/*******************/
+img {
+    display: inline-block;
+    box-sizing: border-box;
+    height: inherit;
+    margin-left: 0em;
+    margin-right: 0em;
+    margin-bottom: 2em;
+}
+
+/**********************/
+/*** TEXT Settings ***/
+/********************/
+/* NOTE: These are to be considered the global defaults.*/
+h1 {
+    box-sizing: border-box;
+    display: inline-block;
+    margin-bottom: 1em;
+    margin-left: 0em;
+    text-align: left;
+    font-size: 4.7em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 700;
+}
+h2 {
+    box-sizing: border-box;
+    text-align: left;
+    font-size: 3.7em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 700;
+    margin-bottom: 1em;
+    margin-left: 0em;
+}
+h3 {
+    box-sizing: border-box;
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 3.2em;
+    font-weight: 700;
+    margin-bottom: 1em;
+    position: relative;
+    margin-left: 0em;
+}
+h4 {
+    box-sizing: border-box;
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2.8em;
+    font-weight: 700;
+    margin-bottom: 1em;
+    margin-left: 0em;
+}
+h5 {
+    box-sizing: border-box;
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 1em;
+    margin-left: 0em;
+}
+h6 {
+    box-sizing: border-box;
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2.2em;
+    font-weight: 700;
+    margin-bottom: 1em;
+    margin-left: 0em;
+}
+p {
+    box-sizing: border-box;
+    font-size: 2em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left;
+    line-height: 1.8em;
+    margin-bottom: 1em;
+    margin-left: 0em;
+    /*margin-right: 0.3em;
+	margin-left: 0.2em;*/
+    /*
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  */
+    hyphens: auto;
+}
+a {
+    box-sizing: border-box;
+    /*display: inline-block;*/
+    font-size: 1.6em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+    /*color: blue;*/
+}
+p a {
+    box-sizing: border-box;
+    font-size: inherit;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* Due to the nature of inline-blocks and tags, 
+								this stops them from being huge.*/
+    /*color: blue;*/
+}
+h2 a {
+    font-size: inherit;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* Due to the nature of inline-blocks and tags, 
+								this stops them from being huge.*/
+    
+    text-decoration: none;
+    color: inherit;
+    
+}
+h2 a:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+h2 a:active {
+    background-color: #ffffff;
+    color: #000000;
+}
+li a {
+    font-size: inherit;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+ul a {
+    font-size: inherit;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/**********************/
+/*** LIST Settings ***/
+/********************/
+
+ul {
+    margin-left: 1.6em;
+    margin-bottom: 1em;
+    list-style-position: inside;
+    font-size: 2em;
+    line-height: 1.6em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left; 
+    
+}
+li {
+    margin-bottom: 0.5em;
+    list-style-type: square;
+    font-size: inherit;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+ol {
+    margin-left: 1.6em;
+    margin-bottom: 1em;
+    list-style-position: inside;
+    font-size: 2em;
+    line-height: 1.6em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left;
+    
+}
+ol li {
+    margin-bottom: 0.5em;
+    list-style-type: decimal;
+
+}
+dl {
+    margin-left: 5%;
+    margin-bottom: inherit;
+    font-size: 2em;
+    line-height: 1.6em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left;  
+    
+}
+dt {
+    margin-bottom: inherit;
+    font-weight: 700;
+}
+dd {
+    margin-bottom: inherit;
+    margin-left: 1.5em;
+}
+/**********************/
+/*** LINK Settings ***/
+/********************/
+/* If I don't use the psudeo selector :link, it won't override everything*/
+
+a {
+    box-sizing: border-box;
+    color: blue;
+    text-decoration: underline;
+}
+a:visited {
+    box-sizing: border-box;
+    color: #BF5F00;
+    text-decoration: underline;
+}
+a:hover {
+    box-sizing: border-box;
+    color: #ffffff;
+    background-color: blue;
+    text-decoration: none;
+}
+a:active {
+    box-sizing: border-box;
+    color: #ffffff;
+    background-color: #BF5F00;
+    text-decoration: none;
+}
+
+/**********************/
+/*** FORM Settings ***/
+/********************/
+
+form {
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    padding-top: 2em;
+    /*padding-right: 5%;
+	padding-left: 5%; */
+    padding-bottom: 1em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+fieldset {
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    background-color: #ffffff;
+    /* border:solid; */
+    
+    margin-left: 0em;
+    margin-top: 0em;
+    margin-right: 0em;
+    margin-bottom: 3em;
+    padding: 3em;
+    border-width: 0em;
+}
+legend {
+    background-color: #ffffff;
+    font-size: 3em;
+    font-weight: 700;
+    text-align: left;
+    /*padding-left: 1em;
+	padding-right: 1em;*/
+    /*margin-left: 7%;*/
+    
+    margin-left: 0em;
+    margin-top: 0em;
+    margin-right: 0em;
+    margin-bottom: 1em;
+    padding: 0em;
+}
+form dl {
+    box-sizing: border-box;
+    display: block;
+    margin-left: 0em;
+    margin-bottom: 1em;
+}
+form dt {
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    margin-top: 0em;
+    margin-bottom: inherit;
+}
+form dd {
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    margin-left: 0em;
+    margin-top: 0em;
+    margin-right: 0em;
+    margin-bottom: 2em;
+    padding-left: 0em;
+    padding-right: 0em;
+}
+input {
+    vertical-align: middle;
+    margin-bottom: inherit;
+    margin-left: 0em;
+    margin-top: 0em;
+}
+input span {
+    display: block;
+    padding-left: 1em;
+}
+[type="radio"],
+[type="checkbox"] {
+    width: 6%;
+    height: 1.7em;
+}
+[type="radio"] {
+    float: left;
+    margin-right: 1em;
+}
+[type="checkbox"] {
+    margin-right: 1em;
+    margin-bottom: 0em;
+}
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    
+    height: inherit;
+    width: 70%;
+    background-color: #ffffff;
+    border-style: solid;
+    border-color: #000000;
+    border-left-width: 0.2em;
+    border-top-width: 0.1em;
+    border-right-width: 0.2em;
+    border-bottom-width: 0.3em;
+    border-radius: 0.66em;
+    border-collapse: collapse;
+    padding: 1em;
+    font-size: inherit;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000000;
+    
+}
+[type="button"]:hover,
+[type="reset"]:hover,
+[type="submit"]:hover {
+    height: inherit;
+    padding: 1em;
+    border-color: #000000;
+    border-left-width: 0.2em;
+    border-top-width: 0.1em;
+    border-right-width: 0.2em;
+    border-bottom-width: 0.3em;
+    border-radius: 0.66em;
+    border-collapse: collapse;
+    color: #000000;
+    background-color: #CFCFCF;
+}
+[type="button"]:active,
+[type="reset"]:active,
+[type="submit"]:active {
+    height: inherit;
+    padding-bottom: 1.2em;
+    /*stops elements from shriking around buttons*/
+    
+    border-left-width: 0.1em;
+    border-top-width: 0.1em;
+    border-right-width: 0.1em;
+    border-bottom-width: 0.1em;
+    color: #ffffff;
+    background-color: #000000;
+}
+select {
+    font-size: inherit;
+    width: 50%;
+    height: 2.4em;
+    background-color: #ffffff;
+    border-style: solid;
+    border-color: #333333;
+    border-width: 0.2em;
+    border-radius: 0.66em;
+    border-collapse: collapse;
+}
+optgroup {
+    /* meh */
+}
+option {
+    /*font-size: inherit;*/
+    font-weight: 400;
+}
+[type="file"] {
+    font-size: 1em;
+    width: inherit;
+    height: inherit;
+}
+[type="text"],
+[type="password"],
+[type="email"],
+[type="tel"] {
+    height: 2.5em;
+    font-size: inherit;
+    width: 90%;
+}
+
+/***********************/
+/*** TABLE Settings ***/
+/*********************/
+
+/* Quick Note: after debugging it should be noted that the font size set in the table selector controls 
+                all of the em sizing for all the following table elements. So if you need to adjust the 
+                sizing for any thing, you need to use the table calculated font size. For example the
+                caption font size is 1.5em cause its 1.5em of the calculated table selector font size.
+                The tbody, thead, and tfooter fontsize are set to inherit so the tables fontsize is carried
+                over to the th and td selectors. The way before by setting the font size on tbody, thead, and
+                tfooter lead to inconsistances between the table border size and the cell border size.
+                I'd rather have all the ems work against one constant then have two constants.*/
+
+.table_overflow { 
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+table {
+    display: table;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2em;
+    margin-left: 0em;
+    margin-top: 0em;
+    border-collapse: separate;
+    border-color: #000000;
+    border-width: .1em;
+    border-style: solid;
+    border-spacing: .5em;
+}
+caption {
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    font-weight: 700;
+    /*bold*/
+}
+thead{
+    font-size:inherit;
+}
+tbody{
+    font-size: inherit
+}
+tfoot{
+    font-size: inherit;
+}
+th {
+    padding-left: .5em;
+    padding-top: .5em;
+    padding-right: .5em;
+    padding-bottom: .5em;
+    border-color: #000000;
+    border-width: .1em;
+    border-style: solid;
+    border-spacing: .1em;
+}
+
+tr,
+td {
+    padding-left: .5em;
+    padding-top: .5em;
+    padding-right: .5em;
+    padding-bottom: .5em;
+}
+td {
+    border-color: #000000;
+    border-width: .1em;
+    border-style: solid;
+    border-spacing: .1em;
+}
+col {
+    width: inherit;
+}
+pre {
+    font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
+    font-size: 2em;
+    text-align: left;
+    line-height: 1.5em;
+    white-space: normal;
+}
+pre span {
+    display: block;
+}
+
+/* will be putting table spefic layout adjustments here*/
+.table_layout_auto {
+    table-layout: auto;
+    width: inherit;
+}
+
+.table_layout_auto_100 {
+    table-layout: auto;
+    width: 100%;
+}
+
+.table_layout_fixed {
+    table-layout: fixed;
+    width: inherit;
+    white-space: nowrap;
+}
+.table_layout_fixed_100 {
+    table-layout: fixed;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.table_layout_fixed td, .table_layout_fixed th, .table_layout_fixed_100 td, .table_layout_fixed_100 th {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/***********************/
+/*** STYLE Settings ***/
+/*********************/
+
+.bottom_z {
+    position: relative;
+}
+.top_z {
+    box-sizing: border-box;
+    position: absolute;
+    text-align: center;
+    display: block;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 36%;
+}
+.top_z a {
+    box-sizing: border-box;
+    display: block;
+    height: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    border-width: 0.2em;
+    border-left-style: none;
+    border-right-style: none;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-color: #C90;
+    text-decoration: none;
+    text-align: center;
+    background-color: #333333;
+    vertical-align: baseline;
+    color: #fff;
+}
+/*** OPACITY ***/
+/*NOTE: opacity is CSS3 and doesn't workin in IE 8<. */
+/*NOTE2: opacity effects child elements. 
+            If this is undesired make your own RGBA colors with opacity settings */
+.opacity_10{
+    opacity: 0.1;
+}
+.opacity_25{
+    opacity: 0.25;
+}
+.opacity_33{
+    opacity: 0.33;
+}
+.opacity_50{
+    opacity: 0.50;
+}
+.opacity_66{
+    opacity: 0.66;
+}
+.opacity_75{
+    opacity: 0.75;
+}
+.opacity_90{
+    opacity: 0.90;
+}
+/*example of RGBA opacity*/
+.opacity_black_50{
+    background: rgba(0, 0, 0, 0.5);
+}
+.opacity_black_25{
+    background: rgba(0, 0, 0, 0.25);
+}
+.opacity_black_75{
+    background: rgba(0, 0, 0, 0.75);
+}
+/*****************************/
+/***** DISPLAY Settings *****/
+/***************************/
+.float_right {
+    float: right;
+}
+.float_left {
+    float: left;
+}
+.inline_block {
+    display: inline-block;
+}
+.full_width,
+img.full_width {
+    width: 100%;
+}
+.display_block {
+    display: block;
+}
+.display_inline{
+    display: inline;
+}
+
+/*******************************/
+/***** BACKGROUND STYLES ******/
+/*****************************/
+
+.color_white {
+    background-color: #ffffff;
+}
+.color_light_gray {
+    background-color: #E0E0E0;
+}
+.color_gray {
+    background-color: #9E9E9E;
+}
+.color_dark_gray {
+    background-color: #333333;
+}
+.color_black {
+    background-color: #000000;
+}
+.color_seafoam {
+    background-color: #8BF4BB;
+}
+.color_red{
+    background-color: red;
+}
+
+/************************/
+/***** SPACE FIXES *****/
+/**********************/
+
+.margin_right_auto {
+    margin-right: auto;
+}
+.no_margin {
+    margin: 0em;
+}
+.no_height {
+    height: 0em;
+}
+.margin_left {
+    margin-left: 2em;
+}
+.margin_left_small {
+    margin-left: 1em;
+}
+.margin_top {
+    margin-top: 2em;
+}
+.margin_top_small{
+	margin-top: 1em;
+}
+.margin_top_four {
+    margin-top: 4em;
+}
+.margin_top_eight {
+    margin-top: 8em;
+}
+.margin_bottom {
+    margin-bottom: 2em;
+}
+.margin_bottom_auto {
+    margin-bottom: auto;
+}
+.margin_bottom_big {
+    margin-bottom: 5em;
+}
+.margin_buttom_none {
+    margin-bottom: 0em;
+}
+.margin_bottom_small {
+    margin-bottom: 1em;
+}
+.margin_bottom_eight{
+    margin-bottom: 8em;
+}
+.padding_none {
+    padding: 0em;
+}
+.padding {
+    padding: 2em;
+}
+.padding_small {
+    padding: 1em;
+}
+.padding_left {
+    padding-left: 2em;
+}
+.padding_left_big {
+    padding-left: 5em;
+}
+.padding_top {
+    padding-top: 2em;
+}
+.padding_bottom {
+    padding-bottom: 2em;
+}
+.padding_bottom_auto {
+    padding: 4em;
+}
+.place_behind {
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    z-index: 7;
+    top: 2em;
+}
+.padding_right {
+    padding-right: 2em;
+}
+.padding_right_big {
+    padding-right: 5em;
+}
+/************************/
+/***** TEXT STYLES *****/
+/**********************/
+
+.font_gray {
+    color: #383838;
+}
+.font_white{
+    color:#ffffff;
+}
+span.big_font {
+    font-size: 3em;
+    word-wrap: break-word;
+}
+.small_font {
+    font-size: 0.7em;
+    line-height: 1.4em;
+}
+.text_center {
+    text-align: center;
+}
+.text_align_top {
+    vertical-align: text-top;
+}
+.text_align_right {
+    text-align: right;
+}
+.text_align_justify {
+    text-align: justify;
+}
+.text_left {
+    text-align: left;
+}
+.text_linethrough {
+    text-decoration: line-through;
+}
+.text_center {
+    text-align: center;
+}
+.font_bold {
+    font-weight: 700;
+}
+.font_bigger {
+    font-size: 3em;
+}
+.font_big {
+    font-size: 2.5em;
+}
+.font_uppercase {
+    text-transform: uppercase;
+}
+
+/*************************/
+/**** BORDER STYLES *****/
+/***********************/
+
+.border_black {
+    border-color: #000000;
+}
+.border_solid {
+    border-style: solid;
+}
+.border_dotted {
+    border-style: dotted;
+}
+.border_double {
+    border-style: double;
+}
+.border_dashed {
+    border-style: dashed;
+}
+.border_thick {
+    border-width: 3em;
+}
+.border_bottom_thick {
+    border-bottom-width: 2em;
+}
+.border_top_thick {
+    border-bottom-width: 2em;
+}
+.border_top_thin {
+    border-top-width: 0.5em;
+}
+.border_left_thick {
+    border-left-width: 2em;
+}
+.border_right_thick {
+    border-right-width: 2em;
+}
+.border_bottom_thin {
+    border-bottom-width: 0.5em;
+}
+/***** FONT COLORS *****/
+
+.font_white {
+    color: #ffffff;
+}
+.font_dark_red {
+    color: #660000;
+}
+/***** FIXES*****/
+/************** DROP DOWN **********/
+/****/
+/*
+#nav .start_drop_down{
+	position: relative;
+}*/
+
+#nav .start_drop_down ul {
+    display: none;
+    position: relative;
+}
+#nav .start_drop_down .dropdown li a {
+    display: block;
+}
+#nav .drop_down {
+    display: block;
+    vertical-align: text-top;
+    margin-bottom: 0em;
+    margin-left: 0.5em;
+}
+#nav .drop_down li {
+    box-sizing: border-box;
+    list-style: none;
+    display: inline-block;
+    margin-bottom: 0em;
+    text-align: center;
+}
+#nav .drop_down li a {
+    box-sizing: border-box;
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    font-size: 0.5em;
+}
+#nav .drop_down a:hover {
+    color: #ffffff;
+    background-color: #000000;
+    visibility: visible;
+}
+#nav .drop_down ul a:hover {
+    color: #ffffff;
+    background-color: #000000;
+}
+#nav .drop_down a:active {
+    color: #f5b148;
+    background-color: #000000;
+}
+#nav ul li:hover > ul {
+    color: #ffffff;
+    background-color: #000000;
+    position: absolute;
+    display: block;
+    z-index: 4;
+    padding-bottom: 0em;
+}
+#nav ul li:hover > ul li a:hover {
+    color: #f5b148;
+    display: block;
+    padding-bottom: 0em;
+}
+#nav ul li:hover > ul li a:active {
+    display: block;
+    color: #000000;
+    background-color: #f5b148
+}
+/********/
+
+footer {
+    display: inline-block;
+    margin-top: 1em;
+    margin-bottom: 0em;
+    /*background: linear-gradient(to bottom, blue , darkblue);*/
+    
+    font-family: 'Roboto', Arial, Helvetica, Helvetica neue, sans-serif;
+    font-weight: 500;
+    text-transform: capitalize;
+    /*margin-left: 20em;*/
+    
+    box-sizing: inherit;
+    vertical-align: text-top;
+    background-color: #000000;
+    padding-top: 4em;
+}
+footer ul {
+    display: inline-block;
+    vertical-align: text-top;
+    margin-bottom: 0em;
+}
+footer li {
+    box-sizing: border-box;
+    list-style: none;
+    display: inline-block;
+    margin-bottom: 0em;
+}
+footer li a {
+    box-sizing: border-box;
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    font-size: 1.2em;
+}
+footer a:hover {
+    color: #000000;
+    background-color: #a4c2dc;
+}
+footer a:active {
+    color: #f5b148;
+    background-color: #000000;
+}
+
+/*******************************/
+/***** BUTTON LINK STYLES *****/
+/*****************************/
+
+.link_button {
+    box-sizing: content-box;
+    text-align: center;
+    /*vertical-align: text-top;*/
+    display: inline-block;
+    font-size: 3em;
+    font-weight: 700;
+    text-decoration: none;
+    color: #000000;
+    height: 2em;
+    padding-left: 0.7em;
+    padding-top: 0.7em;
+    padding-right: 0.7em;
+    background-color: #fff;
+    border-color: #000000;
+    border-style: solid;
+    border-left-width: 0.2em;
+    border-top-width: 0.2em;
+    border-right-width: 0.2em;
+    border-bottom-width: 0.2em;
+    border-radius: 0.4em;
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+}
+.link_button_alt {
+    box-sizing: content-box;
+    text-align: center;
+    /*vertical-align: text-bottom;*/
+    margin-top: auto;
+    display: inline-block;
+    font-size: 3em;
+    font-weight: 700;
+    text-decoration: none;
+    background-color: #767676;
+    color: #ffffff;
+    height: 2em;
+    padding-left: 0.7em;
+    padding-top: 0.7em;
+    padding-right: 0.7em;
+    border-color: #767676;
+    border-style: solid;
+    border-left-width: 0.2em;
+    border-top-width: 0.2em;
+    border-right-width: 0.2em;
+    border-bottom-width: 0.2em;
+    border-radius: 0.4em;
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+}
+.link_button:visited,
+.link_button_alt:visited {
+    box-sizing: content-box;
+    color: inherit;
+}
+.link_button:hover {
+    box-sizing: content-box;
+    color: #000000;
+    background-color: #CFCFCF;
+}
+.link_button_alt:hover {
+    box-sizing: content-box;
+    color: #ffffff;
+    background-color: #999999;
+    border-color: #999999;
+}
+.link_button:active,
+.link_button_alt:active {
+    box-sizing: content-box;
+    color: #ffffff;
+    background-color: #000000;
+    border-width: 0.2em;
+    text-decoration: none;
+    margin-bottom: 1em;
+    border-color: #000000;
+}
+
+/***************************/
+/**** OTHER COMPONETS *****/
+/*************************/
+
+.demo_paragraph_padding p {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+.demo {
+    padding-left: 5em;
+    padding-top: 2em;
+    margin-top: 2em;
+    text-transform: uppercase;
+    background-color: #8BF4BB;
+    color: #660000;
+}
+
+.margin_what_css{
+	margin-top: 0.3em;
+}
+
+.box_sizing_content{
+    box-sizing: content-box;
+}
+
+a[name]{
+    text-decoration-line: none;
+    color: inherit;
+    font-size: inherit;
+}
+a[name]:hover{
+    background-color: inherit;
+    color: inherit;
+}
